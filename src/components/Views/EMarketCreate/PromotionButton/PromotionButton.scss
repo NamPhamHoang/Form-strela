@@ -1,0 +1,40 @@
+.e-market-create .promotion-button {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  position: relative;
+
+  &.active {
+    .circle {
+      background: $orange;
+    }
+  }
+
+  div {
+    text-align: center;
+    width: 100%;
+    font-size: $font-size-18;
+  }
+
+  .circle {
+    transition: background-color .3s;
+    position: absolute;
+    background: $white;
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    left: bsize(2);
+    top: bsize(2);
+  }
+
+  .promotion-title {
+    margin-top: bsize(4);
+  }
+
+  .time {
+    font-size: $font-size-32;
+    font-weight: 500;
+  }
+}

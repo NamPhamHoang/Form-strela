@@ -1,0 +1,48 @@
+.collapse-styles {
+  .content {
+    margin-top: bsize(4);
+  }
+}
+
+.btn-collapse {
+  position: relative;
+  width: 100%;
+  color: $white;
+  font-size: $font-size-18;
+  margin-top: bsize(3);
+  padding: bsize(2) bsize(3);
+  border-radius: $border-radius;
+  text-align: left;
+  transition: background-color .3s, border-color .3s;
+
+  &.active {
+    background-color: $gray-600 !important;
+    border-color: $gray-600 !important;
+
+    .icon {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &.active:focus,
+  &.active:active {
+    box-shadow: 0 0 0 0.2rem rgba($gray-600, 0.5) !important;
+  }
+
+  .icon {
+    pointer-events: none;
+    height: 100%;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: transform .2s;
+  }
+}
+.galleryImageDiv{
+  max-height: 88px;
+  border-radius: 10px;
+}

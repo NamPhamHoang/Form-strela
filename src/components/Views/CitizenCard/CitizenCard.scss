@@ -1,0 +1,235 @@
+/*
+  This is used also in Citizen Zone
+*/
+
+.citizen-card {
+  padding-bottom: 0;
+  margin-bottom: 2rem;
+  position: relative;
+
+  .ct-enter {
+    opacity: 0;
+    transform: scale(.98);
+    display: block;
+  }
+
+  .ct-enter-done {
+    opacity: 1;
+    transform: scale(1);
+    display: block;
+  }
+
+  .ct-enter-active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  .ct-exit {
+    display: none !important;
+  }
+
+  .ct-exit-active {
+    display: none !important;
+  }
+
+  .ct-exit-done {
+    opacity: 0;
+    display: none;
+  }
+
+
+  .collapse-buttons {
+    .btn {
+      margin-top: bsize(1);
+      color: $white;
+      background-color: $primary;
+      padding: 1rem 0;
+
+      &:hover {
+        transform: scale(.85);
+      }
+
+      &.active {
+        background-color: $gray-600;
+      }
+
+      .text {
+        text-transform: none;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  .description {
+    .more-info {
+      font-size: $font-size-base;
+      margin-top: bsize(5);
+      color: $white;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+      strong {
+        font-weight: 300;
+      }
+    }
+
+    .more-info-citizen-zone {
+      margin-top: 0;
+      margin-bottom: bsize(5);
+    }
+
+    .tabLinks {
+      @extend .more-info;
+      @extend .more-info-citizen-zone;
+      strong {
+        font-weight: 500;
+      }
+      margin-top: bsize(1)
+    }
+  }
+
+  .card-image {
+    padding-left: bsize(4);
+    padding-right: bsize(4);
+    height: 300px;
+    width: 100%;
+    margin-top: 4rem;
+    border-radius: $border-radius;
+
+    .photo-container {
+      border-radius: $border-radius;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .icons {
+    margin-top: 5rem;
+
+    .described-icon {
+      margin-bottom: bsize(5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+
+      svg {
+        margin-bottom: bsize(2);
+      }
+    }
+  }
+
+
+}
+
+
+@include media-breakpoint-only(xl) {
+  .citizen-card {
+    .background-square-primary {
+      top: -150px;
+      right: -80px;
+      height: 580px;
+      width: 600px;
+      transform: rotate(-30deg);
+    }
+  }
+}
+
+@include media-breakpoint-only(lg) {
+  .citizen-card {
+    .background-square-primary {
+      top: -150px;
+      right: -132px;
+      height: 548px;
+      width: 600px;
+      transform: rotate(-30deg);
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .citizen-card {
+
+    .card-image {
+      margin-top: bsize(4);
+    }
+
+    .icons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2.5rem;
+
+      .described-icon {
+        width: 25%;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        span {
+          display: none;
+        }
+
+        svg {
+          color: $primary;
+          transform: scale(2);
+          margin-bottom: bsize(3);
+        }
+      }
+    }
+
+    .description {
+      .more-info {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .tabLinks{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
+  .citizen-card {
+
+    .icons {
+      flex-wrap: wrap;
+
+      .described-icon {
+        width: 33.33%;
+
+
+        svg {
+          display: block;
+          color: $primary;
+        }
+      }
+
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .citizen-card {
+    .icons {
+      .described-icon {
+        svg {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+}

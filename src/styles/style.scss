@@ -1,0 +1,564 @@
+@import "~leaflet/dist/leaflet.css";
+@import 'variables';
+
+@keyframes cardsAppear {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+//Base
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+// Place for deleting from $themes
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/utilities";
+//Bootstrap Components
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/forms";
+//@import "~bootstrap/scss/dropdown";
+//@import "~bootstrap/scss/nav";
+//@import "~bootstrap/scss/button-group";
+//@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+//@import "~bootstrap/scss/navbar";
+//@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+//@import "~bootstrap/scss/badge";
+//@import "~bootstrap/scss/jumbotron";
+//@import "~bootstrap/scss/alert";
+//@import "~bootstrap/scss/progress";
+//@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+//@import "~bootstrap/scss/close";
+//@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
+//@import "~bootstrap/scss/tooltip";
+//@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+//@import "~bootstrap/scss/spinners";
+//@import "~bootstrap/scss/print";
+//Utils
+@import 'utils/_opacity-hover.scss';
+@import 'utils/_spacing.scss';
+//Animations
+@import 'animations';
+//Own
+@import 'inputs';
+//Project Based Components
+@import '../components/Main/Footer/Footer';
+@import '../components/Panel/PanelHeader';
+@import '../components/Socials/Socials';
+@import '../components/IconStrap/IconStrap';
+@import '../components/NoItemsMessage/NoItemsMessage';
+@import '../components/Buttons/ButtonSquare/ButtonSquare';
+@import '../components/Buttons/ButtonWideImage/ButtonWideImage';
+@import '../components/Buttons/ButtonWideIcon/ButtonWideIcon';
+@import '../components/Buttons/ButtonSocial/ButtonSocial';
+@import '../components/Buttons/ButtonPrint/ButtonPrint';
+@import '../components/Buttons/ButtonBack/ButtonBack';
+@import '../components/Buttons/ButtonQuantity/ButtonQuantity';
+@import '../components/Main/Header/MainHeader';
+@import '../components/Main/Header/AppendableHeader';
+@import '../components/Main/Header/Menu/Menu';
+@import '../components/Titles/SectionTitle/SectionTitle';
+@import '../components/Titles/TabTitle/TabTitle';
+@import '../components/Titles/Title/Title';
+@import '../components/ImageLink/ImageLink';
+@import '../components/NavigationArrows/NavigationArrows';
+@import '../components/Main/Shortcuts';
+@import '../components/Collapse/Collapse';
+@import '../components/Ad/Ad';
+@import '../components/Path/Path';
+@import '../components/Pagination/Pagination';
+@import '../components/Error/Error';
+@import '../components/GrayStrap/GrayStrap';
+@import '../components/BlueIcon/BlueIcon';
+@import '../components/Modals/BasketModal/BasketModal';
+@import '../components/BackgroundSquare/BackgroundSquare';
+@import '../components/Cards/Card';
+@import '../components/Cards/LayoutCards/LayoutCard';
+@import '../components/Cards/ConsultantCard/ConsultantCard';
+@import '../components/Cards/LayoutCards/LayoutCardWithInfoTitlesAndSlider';
+@import '../components/News/NewsListItem/NewsListItem';
+@import '../components/CarouselWithCounter/CarouselWithCounter';
+@import '../components/News/News';
+@import '../components/BasketIndicator/BasketIndicator';
+@import '../components/Modals/InformationModal/InformationModal';
+@import '../components/Loading/Loading';
+@import '../components/Loading/LoadingGrayCard/LoadingGrayCard';
+@import '../components/Views/MainPage/News/News';
+@import '../components/Views/MainPage/News/NewsSmall/NewsSmall';
+@import '../components/Views/MainPage/News/NewsBig/NewsBig';
+@import '../components/Views/MainPage/News/Events/Events';
+@import '../components/Views/MainPage/Announcements/Announcement/Announcement';
+@import '../components/Views/MainPage/Announcements/Announcements';
+@import '../components/Views/MainPage/QuestionnaireAndImageLinks/QuestionnaireAndImageLinks';
+@import '../components/Views/MainPage/QuestionnaireAndImageLinks/Questionnaire/Questionnaire';
+@import '../components/Views/MainPage/MeetOnFacebook/MeetOnFacebook';
+@import '../components/Views/CommunityCompanyIndex/CompanyCard/CompanyCard';
+@import '../components/Views/EstateIndex/EstateCard/EstateCard';
+@import '../components/Views/Pharmacy/PharmacyCard/PharmacyCard';
+@import '../components/Views/InstitutionShow/ManageContent';
+@import '../components/Views/InstitutionShow/ManageContent';
+@import '../components/Views/BuyTicket/BuyTicket';
+@import '../components/Views/RestaurantOrders/RestaurantOrders';
+@import '../components/Views/MyCompany/MyCompany';
+@import '../components/Views/InvestmentsMap/InvestmentsMap';
+@import '../components/Views/CompleteData/CompleteData';
+@import '../components/Views/CompanyShow/CompanyShow';
+@import '../components/Views/CompanyIndex/ItemCard/ItemCard';
+@import '../components/Views/CompanyIndex/CompanyIndex';
+@import '../components/Views/NewsIndex/NewsIndex';
+@import '../components/Views/Notifications/Notifications';
+@import '../components/Views/InstitutionSchoolIndex/InstitutionSchoolIndex';
+@import '../components/Views/CompanyIndex/CategoriesList/CategoriesList';
+@import '../components/Views/EMarketCreate/EMarketCreate';
+@import '../components/Views/EMarketCreate/PromotionButton/PromotionButton';
+@import '../components/Views/EMarketIndex/EMarketIndex';
+@import '../components/Views/EMarketIndex/PerPage/PerPage';
+@import '../components/Views/EMarketIndex/Filters/Filters';
+@import '../components/Views/EMarketIndex/ItemCard/ItemCard';
+@import '../components/Views/EMarketShow/EMarketShow';
+@import '../components/Views/OrderFoodIndex/OrderFoodIndex';
+@import '../components/Views/OrderFoodShow/OrderFoodShow';
+@import '../components/Views/OrderFoodIndex/ItemCard/ItemCard';
+@import '../components/Views/EMarketShow/ItemInfo/ItemInfo';
+@import '../components/Views/EMarketShow/UserCard/UserCard';
+@import '../components/Views/EMarketShow/OtherItems/OtherItems';
+@import '../components/Views/Events/Events';
+@import '../components/Views/EMarketPanel/EMarketPanel';
+@import '../components/Views/CitizenCardPanel/CitizenCardPanel';
+@import '../components/Views/BuyTicketPanel/BuyTicketPanel';
+@import '../components/Views/ReportProblem/ReportProblem';
+@import '../components/Views/CameraLive/CameraView';
+@import '../components/Views/Login/Login';
+@import '../components/Views/Rubbish/Location/Location';
+@import '../components/Views/Rubbish/Calendar/Calendar';
+@import '../components/Views/Register/Register';
+@import '../components/Views/RestaurantMenu/RestaurantMenu';
+@import '../components/Views/RestaurantMenu/Category/Category';
+@import '../components/Views/CitizenCard/CitizenCard';
+@import '../components/Views/AdOrder/AdOrder';
+@import '../components/Views/Search/Search';
+@import '../components/Views/OrderFoodPanel/OrderFoodPanel';
+@import '../components/Basket/Basket';
+@import '../components/Basket/OrderType/OrderType';
+@import '../components/Basket/Items/Items';
+@import '../components/Basket/Checkout/Checkout';
+@import '../components/Views/EOffice/EOffice';
+@import '../components/Views/EOffice/DescriptionAndLogin/DescriptionAndLogin';
+@import '../components/Views/EOffice/Contact/Contact';
+//Globals
+@import 'angle-list';
+@import 'custom-grid';
+@import 'simulated-table';
+@import 'carousel';
+@import 'front-forms';
+@import 'dropzone';
+@import 'modal';
+@import 'notifications';
+
+img {
+  max-width: 100%;
+}
+
+.link-clear {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.photo-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  img {
+    display: none;
+  }
+}
+
+.icon-list {
+  .list-group-item {
+    display: flex;
+
+    .icon {
+      margin-right: bsize(2);
+    }
+  }
+}
+
+
+.page-enter {
+  opacity: 0;
+  transform: scale(.98);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.apph-enter {
+  opacity: 0;
+  transform: scale(.98);
+  display: block;
+}
+
+.apph-enter-done {
+  opacity: 1;
+  transform: scale(1);
+  display: block;
+}
+
+.apph-enter-active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.apph-exit {
+  opacity: 1;
+  transform: scale(1);
+  display: block !important;
+}
+
+.apph-exit-active {
+  display: block !important;
+  opacity: 0;
+  transform: scale(.98);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.apph-exit-done {
+  opacity: 0;
+  display: none;
+}
+
+.page-panel-enter {
+  opacity: 0;
+  transform: scale(.95);
+}
+
+.page-panel-enter-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-panel-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.simple-small-date {
+  font-size: $font-size-12;
+  margin-bottom: bsize(2);
+
+  svg {
+    color: $orange;
+  }
+}
+
+.btn-primary {
+  color: $white;
+}
+
+table .action-buttons {
+  padding: 0;
+
+  .btn {
+    padding: .01rem bsize(3);
+
+    &:not(:last-child) {
+      margin-right: bsize(2);
+    }
+
+    svg {
+      margin-right: bsize(1);
+    }
+
+  }
+
+
+  .btn-primary {
+    color: $white;
+  }
+}
+
+
+.login-and-register {
+  position: relative;
+  padding-top: 3rem;
+
+  .form {
+    form {
+      .btn:not(.btn-link) {
+        color: $white;
+        margin: bsize(5) auto bsize(5);
+        display: block;
+        width: 80%;
+      }
+
+      .form-group {
+        margin-top: 2rem;
+        margin-bottom: .5rem;
+      }
+    }
+
+    h2, h5 {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 200;
+    }
+
+    h5 {
+      font-weight: 300;
+      font-size: $font-size-base;
+    }
+
+    .change-link {
+      color: $gray-900;
+      font-size: $font-size-18;
+      text-align: center;
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-strong-500 {
+  strong, b {
+    font-weight: 500;
+  }
+}
+
+
+.table-simple {
+  thead, tbody {
+    tr.new {
+      td {
+        font-weight: 500;
+      }
+
+      .pill {
+        margin-left: bsize(2);
+        margin-right: 4rem;
+        padding: bsize(2) bsize(3);
+        font-size: $font-size-12;
+        color: $white;
+        background: $primary;
+        font-weight: 500;
+        border-radius: $border-radius * 2;
+      }
+    }
+
+    th, td {
+      border-top: none;
+      border-bottom: 1px solid $gray-300;
+    }
+
+    th {
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    td {
+      padding-top: bsize(2);
+      padding-bottom: bsize(2);
+    }
+  }
+}
+
+.panel-filters {
+  display: flex;
+  flex-wrap: wrap;
+  margin: bsize(3) 0;
+
+
+  > div {
+    min-width: 15rem;
+    margin-right: bsize(3);
+  }
+
+  @include media-breakpoint-only(xs) {
+    justify-content: center;
+
+    > div {
+      min-width: 100%;
+      width: 100%;
+    }
+  }
+}
+
+html, body {
+  height: 100%;
+  line-height: unset;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .main-template-content {
+    flex-grow: 1;
+  }
+}
+
+
+.panel-submit-button {
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: $white;
+  font-size: $font-size-base;
+  font-weight: 500;
+}
+
+.alert-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.alert-exit {
+  opacity: 1;
+}
+
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.btn-primary-darken {
+  $value: theme-color-level("primary", 2);
+  @include button-variant($value, $value);
+}
+
+.btn-primary-darken2 {
+  $value: theme-color-level("primary", 4);
+  @include button-variant($value, $value);
+}
+
+.btn-primary-darkest {
+  $value: theme-color-level("primary", 6);
+  @include button-variant($value, $value);
+}
+
+.custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: .5em;
+  }
+
+  &::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: $border-radius * 3;
+  }
+}
+
+.leaflet-container {
+  height: 400px;
+  z-index: 1;
+}
+
+.photos-list {
+  display: flex;
+  width: 100%;
+  margin-bottom: bsize(4);
+
+  ul {
+
+    li {
+      padding-right: 5rem;
+      border-radius: $border-radius;
+      margin-top: bsize(3);
+
+      img {
+        border-radius: $border-radius-lg;
+      }
+
+      .btn {
+        box-shadow: $box-shadow-sm;
+        position: absolute;
+        padding: 0;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        right: 1rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+
+        &.btn-danger {
+          top: 2rem;
+        }
+
+        &.btn-primary {
+          top: 6rem;
+          color: $white;
+          pointer-events: none;
+        }
+      }
+
+    }
+  }
+}
+.color-blue {
+  color: $primary;
+}
+@media (min-width: 1200px){
+  .container{
+    max-width: 1230px;
+  }
+}
+
+@import 'high-contrast';
+@import 'print';
+@import 'size-versions';

@@ -1,0 +1,39 @@
+/*
+  WARNING: This is used also in OrderFoodShow, not only CompanyShow
+*/
+
+.company-show {
+
+  .logo {
+    margin-top: bsize(3);
+    height: 7rem;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .data-container {
+    font-weight: 300;
+    display: flex;
+    margin-bottom: bsize(2);
+    line-height: 1.4;
+
+    .icon {
+      margin-right: bsize(2);
+      color: $primary;
+    }
+  }
+
+  .time-container {
+    display: flex;
+
+    .day {
+      width: 7rem;
+    }
+  }
+
+  .leaflet-container {
+    height: 350px;
+  }
+}

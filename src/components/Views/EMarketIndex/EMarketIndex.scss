@@ -1,0 +1,62 @@
+.e-market-index {
+  .add-button {
+    display: flex;
+    justify-content: flex-end;
+
+    .btn {
+      color: $white;
+      text-transform: uppercase;
+
+      svg {
+        margin-right: bsize(2);
+        margin-top: bsize(1);
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .add-button {
+      .btn {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-only(xl) {
+    .first-per-page {
+      position: relative;
+      top: -1.3rem;
+      height: .1rem;
+      margin-top: 0;
+    }
+
+    .second-per-page {
+      position: relative;
+      top: 3rem;
+    }
+
+    .add-button {
+      .btn {
+        padding-left: .5rem;
+        padding-right: .5rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    .add-button {
+      justify-content: center;
+
+      > div {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+}
+

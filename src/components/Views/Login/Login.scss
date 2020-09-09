@@ -1,0 +1,212 @@
+.login {
+  position: relative;
+  overflow: hidden;
+
+  .form {
+
+    form {
+      margin-top: bsize(5);
+
+      .additional {
+        font-size: $font-size-14;
+
+        label, a {
+          line-height: 1.8;
+        }
+      }
+
+
+      .password-reminder {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+          color: $gray-900;
+
+        }
+      }
+
+
+    }
+
+  }
+
+  .login-by-social {
+    padding-top: 1.4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: bsize(5) bsize(2);
+      margin-top: 2rem;
+      color: $white;
+
+      svg {
+        margin-right: 2rem;
+      }
+    }
+
+    $socials: (
+            'fb': $fb,
+            'google': $gplus,
+    );
+    @each $name, $color in $socials {
+      .#{$name} {
+        background-color: $color;
+        border-color: $color;
+
+        &:hover {
+          background-color: darken($color, 10);
+          border-color: darken($color, 10);
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 0.2rem rgba($color, 0.5)
+        }
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-down(md) {
+  .login {
+    .form {
+      form {
+        .btn {
+          margin-bottom: bsize(4);
+        }
+      }
+    }
+
+    .form {
+      order: 2;
+
+    }
+
+    .login-by-social {
+      margin-top: 0;
+      margin-bottom: bsize(4);
+      order: 1;
+
+      .btn {
+        font-size: $font-size-base;
+        padding: bsize(3);
+        margin: bsize(2) auto bsize(3);
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .additional > div {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .login {
+    .login-by-social {
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-only(xl) {
+  .login {
+    > .row > div {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+
+    .background-square-primary {
+      right: -95px;
+      bottom: -81px;
+      transform: rotate(-20deg);
+      width: 300px;
+      height: 300px
+    }
+
+    .background-square-light-gray {
+      right: -95px;
+      top: -126px;
+      transform: rotate(-20deg);
+      width: 597px;
+      height: 497px;
+    }
+  }
+}
+
+@include media-breakpoint-only(lg) {
+  .login {
+    > .row > div {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    .background-square-primary {
+      right: -95px;
+      bottom: -81px;
+      transform: rotate(-20deg);
+      width: 300px;
+      height: 250px
+    }
+
+    .background-square-light-gray {
+      right: -95px;
+      top: -126px;
+      transform: rotate(-20deg);
+      width: 547px;
+      height: 497px;
+    }
+  }
+}
+
+@include media-breakpoint-only(md) {
+  .login {
+    > .row > div {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    .background-square-primary {
+      right: -95px;
+      bottom: -81px;
+      transform: rotate(-20deg);
+      width: 400px;
+      height: 150px
+    }
+
+    .background-square-light-gray {
+      right: -95px;
+      top: -126px;
+      transform: rotate(-15deg);
+      width: 647px;
+      height: 337px;
+    }
+
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  .login {
+    > .row > div {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+  }
+}
+
+
+

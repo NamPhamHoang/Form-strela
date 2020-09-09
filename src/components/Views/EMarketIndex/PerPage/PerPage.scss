@@ -1,0 +1,27 @@
+.per-page {
+  margin-top: bsize(3);
+  display: block;
+  width: 100%;
+  text-align: right;
+  line-height: 1.6;
+  font-size: $font-size-base;
+  font-weight: 300;
+
+  .btn-link {
+    padding: 0 bsize(1);
+    font-size: $font-size-base;
+    color: $gray-900;
+    font-weight: 300;
+
+    &.active {
+      font-weight: 500;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+    > span {
+      display: none;
+    }
+  }
+}

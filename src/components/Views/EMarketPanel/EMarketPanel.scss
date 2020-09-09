@@ -1,0 +1,22 @@
+/*
+  WARNING: This sheet applies to every EMarketPanel views
+*/
+
+.e-market-panel {
+
+  @include media-breakpoint-up(sm) {
+    .item-card-column {
+      flex: 0 0 15rem;
+      max-width: 15rem;
+      margin-top: 3.5rem !important;
+      position: relative;
+      top: -1rem;
+    }
+  }
+
+
+  .e-market-index {
+    margin-top: bsize(4);
+  }
+
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="jarocin.loh-test.pl" id="a7f72da0-2e94-4e99-b5f9-8429d3a4c923" port="22" customName="jarocin_szablony" nameFormat="CUSTOM" username="jarocin_szablony" />
+      <sshConfig authType="PASSWORD" host="195.78.66.87" id="5efc8c0d-d7eb-4b4e-84b6-72172bafdae9" port="222" customName="invsyst" nameFormat="CUSTOM" username="invsyst" />
+      <sshConfig authType="PASSWORD" host="195.78.66.87" id="bd0c4b4a-2195-4634-bec6-0d0f21d01b9c" port="222" customName="invsyst" nameFormat="CUSTOM" username="invsyst" />
+    </configs>
+  </component>
+</project>

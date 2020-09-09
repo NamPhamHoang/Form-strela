@@ -1,0 +1,58 @@
+.dropzone-container {
+  margin-bottom: bsize(4);
+  cursor: pointer;
+
+  .dropzone {
+    position: relative;
+    border: 2px dashed $gray-600;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: bsize(3) bsize(4);
+    transition: border-color .3s, background-color .3s;
+
+    .small-label {
+      position: absolute;
+      top: .3rem;
+      left: .75rem;
+      font-size: .7rem;
+    }
+
+
+    &:focus,
+    &:active {
+      border-color: $primary;
+      outline: none;
+      background: rgba($primary, .05);
+    }
+
+    .label,
+    .hint {
+      font-weight: 500;
+      font-size: $font-size-18;
+    }
+
+    .label {
+      width: 100%;
+      display: block;
+      color: $white;
+      padding: bsize(4) 0;
+      background: $gray-600;
+      border-radius: $border-radius;
+      text-align: center;
+      margin-bottom: bsize(2);
+    }
+
+    .hint {
+      margin-bottom: 0;
+      color: $gray-600;
+    }
+
+    .image {
+      height: 100px;
+      width: auto;
+      margin: bsize(2);
+    }
+  }
+}

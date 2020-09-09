@@ -1,0 +1,21 @@
+.manage-content {
+  .btn-primary,
+  .btn-outline-primary:hover,
+  .btn-primary:active,
+  .btn-outline-primary:active {
+    color: $white !important;
+  }
+
+  .btn {
+    padding: bsize(2);
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
+  .manage-content {
+    .btn {
+      margin-top: bsize(2);
+    }
+  }
+}

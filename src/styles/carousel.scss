@@ -1,0 +1,30 @@
+.carousel-indicators {
+  top: 0;
+  left: 0;
+  justify-content: start;
+  margin: 1rem 1.5rem;
+  height: 30px;
+  max-width: 100px;
+
+  li {
+    opacity: .6;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 1px solid #f5f5f5;
+  }
+
+  .active {
+    opacity: 1;
+    background-color: $orange;
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: none;
+}
+
+.carousel-inner {
+  border-radius: $border-radius;
+}

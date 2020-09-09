@@ -1,0 +1,93 @@
+.e-market-show .user-card {
+  box-shadow: $box-shadow-sm;
+  padding-bottom: bsize(4);
+
+  header {
+    background: $primary;
+    display: flex;
+    align-items: center;
+    height: 80px;
+
+    .avatar {
+      --size: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: var(--size);
+      height: var(--size);
+      position: relative;
+      margin-left: bsize(3);
+      top: 1.2rem;
+
+      img {
+        border: 5px solid $white;
+        width: var(--size);
+        height: 100%;
+        border-radius: 100%;
+      }
+    }
+
+    span {
+      color: $white;
+      margin-left: bsize(2);
+      margin-top: .75rem;
+      font-size: $font-size-18;
+    }
+  }
+
+  .link-clear {
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-size: $font-size-14;
+    margin-bottom: bsize(5);
+  }
+
+  .btn:not(.btn-link) {
+    display: block;
+    width: calc(100% - 2rem);
+    text-align: left;
+    color: $white;
+    margin: bsize(2) bsize(3);
+    padding: bsize(2) bsize(1) bsize(2) bsize(3);
+
+
+    svg {
+      margin-right: bsize(2);
+    }
+  }
+
+  .btn-link {
+    padding: 0;
+    color: $white;
+    text-transform: uppercase;
+    font-size: $font-size-14;
+  }
+
+  @include media-breakpoint-only(xl) {
+    .link-clear {
+      padding-right: .9rem;
+      text-align: right;
+    }
+  }
+  @include media-breakpoint-only(lg) {
+    .btn:not(.btn-link) {
+      padding: bsize(1);
+      width: calc(100% - 1rem);
+      margin: bsize(2);
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .link-clear {
+      margin-top: bsize(4);
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    .btn:not(.btn-link) {
+      padding: bsize(1);
+      width: calc(100% - 1rem);
+      margin: bsize(2);
+    }
+  }
+}

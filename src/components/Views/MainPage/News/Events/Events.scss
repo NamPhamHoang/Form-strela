@@ -1,0 +1,132 @@
+.events {
+  height: 100%;
+  background: $white;
+  border-radius: $border-radius;
+  padding: bsize(2) bsize(1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .section-title {
+    margin-top: .5rem;
+    margin-bottom: .75rem;
+  }
+
+  .items {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-bottom: bsize(4);
+    @extend .list-unstyled;
+
+    li:hover {
+      a {
+        transform: translateX(10px);
+      }
+    }
+
+    li {
+      margin-bottom: 0;
+      margin-top: 2px;
+
+      a {
+        transition: transform .3s;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        h5 {
+          width: calc(100% - 50px);
+          margin-left: 5px;
+          font-size: $font-size-base;
+          margin-bottom: 0;
+        }
+
+        .image {
+          margin-left: 25px;
+          height: 60px;
+          width: 70px;
+          border-radius: $border-radius;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .date-container {
+          display: flex;
+          align-items: center;
+        }
+
+        .date {
+          width: 50px;
+          height: 50px;
+          background: $orange;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 100%;
+          flex-direction: column;
+          color: white;
+
+          .day, .rest {
+            font-weight: 500;
+          }
+
+          .day {
+            line-height: 1.2;
+            font-size: 1.2rem;
+          }
+
+          .rest {
+            font-size: .8rem;
+          }
+        }
+
+      }
+
+    }
+  }
+
+  .all-events {
+    position: absolute;
+    bottom: -.6rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+
+@include media-breakpoint-between(md, lg) {
+  .events {
+    .items {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+
+      li {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .events {
+    .items {
+      li {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+      }
+    }
+  }
+}

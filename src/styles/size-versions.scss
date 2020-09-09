@@ -1,0 +1,21 @@
+.version-small {
+  font-size: 14px;
+}
+
+.version-large {
+  font-size: 18px;
+
+
+  @include media-breakpoint-only(xl) {
+    .main-header > .container > .form-row > div:nth-child(2) > a > button {
+      padding-top: .38rem;
+      padding-bottom: .38rem;
+    }
+  }
+  @include media-breakpoint-only(md) {
+    .icon-strap {
+      padding-left: 1rem;
+    }
+  }
+
+}

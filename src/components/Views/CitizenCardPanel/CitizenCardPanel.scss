@@ -1,0 +1,151 @@
+.citizen-card-panel {
+  .btn-primary {
+    color: $white;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .card-ready,
+  .waiting-for-card {
+    h6 {
+      font-weight: 500;
+    }
+  }
+
+  .card-back {
+    position: relative;
+
+    .qr-code, .identity {
+      position: absolute;
+      left: 3rem;
+    }
+
+    .qr-code {
+      bottom: 1rem;
+      width: 10rem;
+      height: auto;
+    }
+
+    .identity {
+      text-transform: uppercase;
+      margin-bottom: 0;
+      font-size: $font-size-14;
+      font-weight: 600;
+      top: 3rem;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .card-ready,
+    .waiting-for-card {
+      margin-top: bsize(3);
+      width: 75%;
+
+      > div {
+        width: 100%;
+      }
+    }
+
+    .card-container,
+    .statuses {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .statuses {
+      margin-top: bsize(2);
+
+      .btn {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    }
+
+    .card-back {
+      .qr-code, .identity {
+        left: 10%;
+      }
+
+      .qr-code {
+        bottom: 10%;
+        width: 30%;
+        height: auto;
+      }
+
+      .identity {
+        text-transform: uppercase;
+        margin-bottom: 0;
+        font-size: $font-size-14;
+        font-weight: 600;
+        top: 15%;
+      }
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    .card-back {
+      position: relative;
+
+      .qr-code, .identity {
+        position: absolute;
+        left: 8vw;
+      }
+
+      .qr-code {
+        bottom: 5vw;
+        width: 25vw;
+        height: auto;
+      }
+
+      .identity {
+        text-transform: uppercase;
+        margin-bottom: 0;
+        font-size: 3vw;
+        font-weight: 600;
+        top: 8vw;
+      }
+    }
+
+    .card-ready,
+    .waiting-for-card {
+      width: 100%;
+    }
+  }
+
+  .floating-image {
+    display: none;
+  }
+
+  @media (min-width: 1300px) {
+    position: relative;
+    overflow-x: hidden;
+
+
+    .content {
+      max-width: 900px;
+      position: relative;
+    }
+
+    .background-square-primary {
+      width: 400px;
+      height: 400px;
+      transform: rotate(-30deg);
+      top: 400px;
+      right: calc(25vw - 600px);
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .floating-image {
+      display: block;
+      position: absolute;
+      top: 300px;
+      right: calc(15vw - 200px);
+    }
+  }
+}

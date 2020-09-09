@@ -1,0 +1,28 @@
+.information-modal {
+  display: flex;
+  justify-content: flex-end;
+
+  .button-container {
+    .btn {
+      font-size: $font-size-base;
+      padding: bsize(1) 0 bsize(1) bsize(1);
+      margin: 0;
+
+      &, &:hover, &:active, &:focus {
+        background: transparent;
+        border: none;
+        color: $gray-900;
+
+        svg {
+          color: $primary;
+        }
+      }
+
+      svg {
+        margin-left: bsize(2);
+        font-size: $font-size-18;
+      }
+
+    }
+  }
+}

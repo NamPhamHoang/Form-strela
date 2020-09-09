@@ -1,0 +1,80 @@
+@keyframes calendarItem {
+  from {
+    opacity: .2;
+    transform: scale(.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rubbish .calendar {
+  width: 100%;
+  margin-top: bsize(5);
+
+  > header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+
+    .btn {
+      color: $white;
+      padding: .25rem;
+      font-size: $font-size-18;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  > main {
+    margin-top: bsize(2);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    .header {
+      color: $white;
+      background: $primary;
+      text-align: center;
+      padding: bsize(1) 0;
+
+      &.first {
+        border-top-left-radius: $border-radius * 2;
+        border-bottom-left-radius: $border-radius * 2;
+      }
+
+      &.last {
+        border-top-right-radius: $border-radius * 2;
+        border-bottom-right-radius: $border-radius * 2;
+      }
+    }
+
+    .item {
+      border-top: 1px hidden $gray-400;
+      border-left: 1px solid $gray-400;
+      padding: bsize(2);
+      min-height: 7rem;
+      animation: calendarItem .5s;
+
+      .day {
+        font-weight: 600;
+      }
+
+      ul {
+        li {
+          color: $primary;
+        }
+      }
+    }
+
+
+  }
+}

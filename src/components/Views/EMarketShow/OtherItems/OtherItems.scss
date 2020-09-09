@@ -1,0 +1,29 @@
+.e-market-show .other-items {
+  margin-top: bsize(5);
+
+  .announcement {
+    background-color: $white;
+    box-shadow: $box-shadow-sm;
+
+    h4.section-title,
+    .content h6 {
+      font-weight: 400;
+    }
+  }
+
+  @include media-breakpoint-only(lg) {
+    .announcement {
+      .content h6 {
+        font-size: $font-size-14 !important;
+      }
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    .announcement {
+      .content h6 {
+        font-size: $font-size-14 !important;
+      }
+    }
+  }
+}

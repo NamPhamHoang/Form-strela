@@ -1,0 +1,225 @@
+.order-food-index .item-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 4rem 0;
+  animation: cardsAppear .3s;
+
+  &:first-child {
+    margin-top: 1rem;
+  }
+
+  .logo {
+    border-radius: $border-radius * 3;
+    z-index: -100;
+    position: absolute;
+    left: 0;
+    background: $gray-100;
+    width: 13rem;
+    height: 8rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .content-container {
+    width: 100%;
+  }
+
+  .content {
+    width: calc(100% - 11rem);
+    margin-left: 11rem;
+    padding: bsize(2) bsize(3);
+    background: $white;
+    border-top-right-radius: $border-radius * 2;
+    border-bottom-right-radius: $border-radius * 2;
+    box-shadow: $box-shadow-sm;
+    display: flex;
+    align-items: center;
+
+    .data {
+      width: calc(100% - 10rem);
+
+      h6 {
+        font-size: $font-size-24;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+
+      .data-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        > div {
+          width: 50%;
+          font-size: $font-size-14;
+        }
+
+        > div:nth-child(4) {
+          height: 1rem;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .cousine {
+      margin-left: bsize(3);
+      margin-right: bsize(3);
+      margin-top: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      width: 10rem;
+      font-weight: 500;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      header {
+        svg {
+          color: $orange;
+          margin-right: bsize(1);
+        }
+      }
+
+      .main {
+        margin-left: 1.5rem;
+        flex-grow: 1;
+        margin-bottom: 0;
+      }
+
+    }
+
+    .link-container {
+
+      .link {
+        width: 10rem;
+        display: block;
+        margin: bsize(3) auto;
+        color: $white;
+        font-size: $font-size-18;
+        padding: bsize(2) bsize(3);
+
+        svg {
+          color: $white;
+        }
+      }
+
+      .ship-data {
+        font-weight: 300;
+        font-size: $font-size-12;
+        min-width: 13rem;
+        display: flex;
+        justify-content: space-between;
+
+        svg {
+          color: $primary;
+        }
+      }
+    }
+
+
+  }
+
+  @include media-breakpoint-only(lg) {
+    .content {
+      .data {
+        width: calc(100% - 6rem);
+      }
+
+      width: calc(100% - 9rem);
+      margin-left: 9rem;
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    .content {
+      .data {
+        width: calc(100% - 5rem);
+      }
+
+      width: 100%;
+      margin-left: 0;
+      border-radius: $border-radius * 2;
+
+      .cousine {
+        margin-top: 0;
+      }
+    }
+    .logo {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+
+
+    .content {
+      flex-direction: column;
+      width: 100%;
+      margin-left: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: $border-radius * 3;
+      border-bottom-right-radius: $border-radius * 3;
+
+      .data {
+        width: 100%;
+        text-align: center;
+
+        .data-container {
+          > div {
+            width: 100%;
+          }
+
+          > div:nth-child(1) {
+            order: 2;
+          }
+
+          > div:nth-child(2) {
+            order: 3;
+          }
+
+          > div:nth-child(3) {
+            order: 1;
+          }
+
+          > div:nth-child(4) {
+            order: 4;
+          }
+        }
+      }
+    }
+
+    .cousine {
+
+      header {
+        text-align: center;
+      }
+
+      .main {
+        text-align: center;
+        margin-left: 0;
+      }
+
+    }
+
+    .logo {
+      width: 100%;
+      position: static;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      img {
+        max-width: 100%;
+        width: initial;
+      }
+    }
+  }
+}

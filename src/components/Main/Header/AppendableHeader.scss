@@ -1,0 +1,185 @@
+.appendable-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 60;
+  opacity: 0;
+  background-color: white;
+  background-image: url("../img/gray.png"), url("../img/lgray.png");
+  background-repeat: no-repeat;
+  background-size: calc(50% - 500px) 4.25rem, 50% 100%;
+  background-position: top right, left;
+  height: 6rem;
+  display: none;
+
+  .container, .row, .col, .main-element {
+    height: 100%;
+  }
+
+  .main-element {
+    display: flex;
+
+    .appendable-logo {
+      width: 12rem;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      align-items: center;
+
+      img {
+        margin-top: 0 !important;
+      }
+    }
+
+    .appendable-square {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: bsize(4);
+      margin-top: bsize(2);
+      padding-left: bsize(4);
+
+      &:not(.search-enabled) .square-buttons {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      &.search-enabled {
+        .square-buttons {
+          display: flex;
+          width: 100%;
+
+          .search-bar {
+            background: $white;
+            padding-left: bsize(2);
+            transition: all .3s;
+            z-index: 15;
+            border: 1px solid $primary;
+            border-right: 0;
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+            flex-grow: 1;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .search-icon {
+              &:hover {
+                transform: scale(1.2) rotate(5deg);
+              }
+
+              transition: transform .3s;
+              cursor: pointer;
+              padding-left: 1rem;
+              padding-right: .25rem;
+
+              svg {
+                color: $primary;
+              }
+            }
+
+            form {
+              padding-left: bsize(2);
+              width: 100%;
+
+              .form-group {
+                margin-bottom: 0;
+
+                label {
+                  left: 0;
+                  color: $gray-600;
+                }
+
+                label.active {
+                  top: -.1rem;
+                }
+
+                input {
+                  &:focus {
+                    box-shadow: 0 4px 2px -2px rgba($primary, .3);
+                    border-bottom: 1px solid $primary;
+                  }
+
+                  padding-left: 0;
+                  border-radius: 0;
+                  border: 0;
+                  border-bottom: 1px solid $primary;
+                }
+              }
+            }
+          }
+
+          .search-button {
+            border: 1px solid $primary;
+            border-left: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            background: $white;
+
+            svg {
+              color: $primary;
+            }
+          }
+
+        }
+      }
+
+      .square-buttons {
+        width: 100%;
+      }
+
+      .btn-primary {
+        color: $white;
+      }
+    }
+
+    .appendable-icon {
+      height: 4.25rem;
+
+      .accessibility {
+        display: none;
+      }
+
+      .icon-strap {
+
+
+        padding-left: bsize(3);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: bsize(2);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    background-size: calc(50% - 300px) 4.25rem, 50% 100%;
+  }
+
+  @include media-breakpoint-down(md) {
+    background-size: 50px 4.25rem, 50% 100%;
+
+    .container,
+    .row,
+    .col,
+    .main-element {
+      max-width: 100%;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .appendable-icon {
+      .socials {
+        display: none !important;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: none !important;
+  }
+}

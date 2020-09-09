@@ -1,0 +1,35 @@
+.restaurant-menu {
+
+  .submit-button {
+    .btn {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .submit-button {
+      width: 30%;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .submit-button {
+      width: 100%;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+
+      .btn {
+        padding-left: 0;
+        padding-right: 0;
+        min-width: 10rem;
+        width: 60%;
+      }
+    }
+  }
+}

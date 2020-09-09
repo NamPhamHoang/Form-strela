@@ -1,0 +1,56 @@
+.restaurant-orders {
+  .thead, .tbody {
+    .tr {
+      grid-template-columns: minmax(8rem, 1fr) minmax(6rem, 1fr) minmax(8rem, 1fr) minmax(9rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr) 7rem;
+    }
+
+    .td, .th {
+      word-break: break-all;
+    }
+  }
+
+  .collapsing,
+  .collapse {
+    grid-column: 1 / 8 !important;
+  }
+
+  .inside-collapse {
+    border-top: 1px solid $primary;
+    display: flex;
+    padding: bsize(3) !important;
+
+
+    .items-list {
+      margin-right: bsize(6);
+
+      li {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .statuses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 bsize(3) * -1;
+
+    .custom-control {
+      margin: 0 bsize(3);
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .thead, .tbody {
+      font-size: $font-size-14;
+    }
+
+    .statuses {
+      flex-wrap: wrap;
+
+      .custom-control {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+.news-list-item {
+  position: relative;
+  margin: bsize(3) 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 110%;
+
+  .img-container {
+    width: 33.333%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $border-radius * 2;
+
+    img {
+      border-radius: $border-radius * 2;
+    }
+  }
+
+  .information {
+    background: white;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    box-shadow: $box-shadow-sm;
+    height: 85%;
+    width: 72.5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: bsize(1) bsize(2);
+    position: relative;
+
+    h5 {
+      font-size: $font-size-24;
+    }
+
+    .button {
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .btn {
+        color: $white;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .news-list-item {
+    .img-container {
+      width: 43.333%;
+    }
+
+    .information {
+      height: 85%;
+
+      h5 {
+        font-size: $font-size-18;
+      }
+
+      .button {
+        bottom: -20px;
+
+        .btn {
+          padding: bsize(2) bsize(3);
+          font-size: $font-size-base;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .news-list-item {
+    position: relative;
+    margin: bsize(3) 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    .img-container {
+      width: 100%;
+      height: auto;
+      position: static;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0;
+
+      img {
+        border-radius: $border-radius $border-radius 0 0;
+      }
+    }
+
+    .information {
+      background: white;
+      border-radius: 0;
+      box-shadow: none;
+      height: auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: bsize(1) bsize(2);
+      position: relative;
+
+      h5 {
+        font-size: $font-size-24;
+      }
+
+      .button {
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .btn {
+          color: $white;
+        }
+      }
+    }
+  }
+}

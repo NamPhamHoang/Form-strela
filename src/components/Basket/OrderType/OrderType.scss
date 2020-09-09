@@ -1,0 +1,63 @@
+.basket .order-type {
+  > div {
+    height: 100%;
+    margin-top: bsize(4);
+  }
+
+  .card {
+    padding: bsize(3) bsize(4);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    form {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .btn-primary {
+      padding-left: 0;
+      padding-right: 0;
+      color: $white;
+      display: block;
+      width: 100%;
+      font-size: $font-size-18;
+    }
+
+    h5 {
+      margin-bottom: bsize(4);
+    }
+  }
+
+  .create-account {
+    h5 {
+      margin: 0;
+    }
+
+    p {
+      margin-top: 1rem;
+      font-weight: 300;
+      font-size: $font-size-14;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn {
+      margin-top: 3.87rem;
+    }
+  }
+
+  .login {
+    .btn-primary {
+      margin-top: 1.1rem;
+    }
+  }
+
+  .password-reminder {
+    color: $gray-900;
+    font-size: $font-size-14;
+    margin-bottom: bsize(4);
+    display: block;
+  }
+}

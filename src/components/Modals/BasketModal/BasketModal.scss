@@ -1,0 +1,33 @@
+.basket-modal {
+  .modal-body {
+    h5 {
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .variants {
+      label {
+        font-weight: 300;
+        font-style: italic;
+      }
+    }
+
+    .summary {
+      margin-top: bsize(2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .price {
+        font-size: $font-size-18;
+        font-weight: 500;
+        color: $primary;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .modal-body, .modal-header, .modal-footer {
+    padding: bsize(3) bsize(4);
+  }
+}

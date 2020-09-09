@@ -1,0 +1,108 @@
+.buy-ticket {
+  padding-bottom: 0;
+  margin-bottom: 2rem;
+  position: relative;
+
+  .background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  .description {
+    h6 {
+      margin-top: bsize(4);
+      font-size: $font-size-base;
+      font-weight: 500;
+    }
+  }
+
+  .ticket-type {
+    margin-top: bsize(3);
+    display: flex;
+
+    .btn {
+      flex-grow: 1;
+      margin: bsize(2);
+      background: $primary;
+      color: white;
+      border: 2px solid $primary;
+      transition: color .3s, background-color .3s;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:hover {
+        transform: scale(1);
+        background-color: $white;
+        color: $primary;
+      }
+
+      .text {
+        font-size: $font-size-20;
+        line-height: 1.3;
+      }
+    }
+
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .buy-ticket {
+    .ticket-type {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .btn {
+        margin: bsize(3) bsize(2);
+        flex-grow: 0;
+        flex-basis: 170px;
+        font-size: $font-size-18;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .buy-ticket {
+    .background-square-light-gray {
+      right: 65px;
+      top: -130px;
+      transform: rotate(-30deg);
+      width: 447px;
+      height: 337px;
+    }
+  }
+}
+
+@include media-breakpoint-only(md) {
+  .buy-ticket {
+    .background-square-light-gray {
+      right: 5px;
+      top: -229px;
+      transform: rotate(-30deg);
+      width: 280px;
+      height: 337px;
+    }
+  }
+}
+
+@include media-breakpoint-only(xs) {
+  .buy-ticket {
+    .ticket-type {
+      .btn {
+        flex-basis: 75%;
+      }
+    }
+  }
+}
+
+

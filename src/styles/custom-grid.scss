@@ -1,0 +1,18 @@
+$gutters: (
+        "sm": 5px,
+        "md": 10px,
+        "lg": 25px,
+);
+
+@each $type, $value in $gutters {
+  .gutters-#{$type} {
+    margin-right: -$value;
+    margin-left: -$value;
+
+    > .col,
+    > [class*="col-"] {
+      padding-right: $value;
+      padding-left: $value;
+    }
+  }
+}

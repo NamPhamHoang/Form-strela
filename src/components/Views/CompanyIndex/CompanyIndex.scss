@@ -1,0 +1,37 @@
+.company-index {
+  .add-button {
+    .btn {
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-top: bsize(4);
+
+      svg {
+        margin-right: bsize(2);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .add-button {
+      .btn {
+        margin-bottom: bsize(4);
+        margin-top: 0;
+        width: 100%;
+      }
+    }
+  }
+  @include media-breakpoint-only(xl) {
+    .add-button {
+      width: 33.33333%;
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    > .row:first-child {
+      margin-bottom: bsize(4);
+    }
+  }
+}

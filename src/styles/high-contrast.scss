@@ -1,0 +1,154 @@
+@media not print {
+  .high-contrast {
+    background-color: black !important;
+
+    * {
+      border-color: yellow !important;
+    }
+
+    * {
+      color: yellow !important;
+    }
+
+    .background-square {
+      display: none;
+    }
+
+    .btn,
+    .events,
+    .icon-strap,
+    .tab-title,
+    .ad-placeholder,
+    .announcement,
+    .questionnaire,
+    .main-footer,
+    .search .items .item,
+    .events .date,
+    .order-food-index .item-card .content,
+    .panel-strap-header,
+    .panel-header,
+    .notifications .pill,
+    .form-control,
+    .company-card .card,
+    .company-index .item-card .content,
+    .company-index .categories-list,
+    .company-index .item-card .logo,
+    .consultant-card,
+    .events-page .event-container .event-item .description,
+    .gray-strap-main,
+    .news-list-item .information,
+    .restaurant-menu .category,
+    .e-market-index .item-card,
+    .e-market-index .promotion,
+    .simulated-table .bg-light,
+    .simulated-table .inside-collapse,
+    .order-food-panel .simulated-table .items-list > article,
+    .order-food-panel .simulated-table .items-list > article .form-control,
+    .dropzone-container p.label,
+    .questionnaire-and-image-links .caption,
+    .news-big .carousel-caption div:last-child,
+    .news-big .carousel-caption .title,
+    .news-big .carousel-caption .text,
+    .news-small .content,
+    .news-small .photo,
+    .estate-card .card,
+    .info-card .icon-list .list-group-item,
+    .menu::before,
+    .restaurant-menu .item-photo .btn {
+      background-color: black !important;
+    }
+
+    .company-card .card,
+    .estate-card .card {
+      border: 1px solid yellow !important;
+    }
+
+    .events-page .event-container .event-item .dot::after,
+    .events-page .event-container .time-line,
+    .events-page .event-container .time-line .up,
+    .events-page .event-container .time-line .down,
+    .e-market-index .filters .price-inputs:after {
+      background-color: yellow !important;
+    }
+
+    .events-page .event-container .time-line .up svg path,
+    .events-page .event-container .time-line .down svg path {
+      color: black !important;
+    }
+
+    .news-small .content::before,
+    .questionnaire-and-image-links .caption::before {
+      border-left-color: yellow;
+    }
+
+    .btn-wide-image img,
+    .news-big .carousel-caption {
+      background: none !important;
+    }
+
+    .announcements,
+    .main-page-news,
+    .main-header,
+    .menu {
+      background-image: none !important;
+    }
+
+    .carousel-indicators li {
+      background-color: yellow !important;
+      border: 1px solid yellow !important;
+    }
+
+    .restaurant-menu .delete-button {
+      border: none;
+    }
+
+    .no-background {
+      background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+    .order-food-show {
+      background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+    .order-food-show .logo-container {
+      z-index: 15;
+    }
+
+    .citizen-card-panel .card-back .identity {
+      color: black !important;
+    }
+
+    .rubbish .calendar > main .header {
+      color: black !important;
+      background-color: yellow !important;
+    }
+
+
+    .restaurant-menu .category {
+      border: 1px solid yellow;
+    }
+
+
+    .page-item.active .page-link {
+      color: black !important;
+      background-color: yellow !important;
+      border-color: yellow !important;
+    }
+
+    .page-item .page-link {
+      color: yellow !important;
+      background-color: black !important;
+      border-color: yellow !important;
+    }
+
+    .page-item.disabled .page-link {
+      opacity: .6;
+    }
+
+    .company-index .item-card .link-container .link {
+      border: 1px solid yellow !important;
+      background-color: black !important;
+    }
+
+  }
+}

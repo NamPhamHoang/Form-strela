@@ -1,0 +1,30 @@
+.questionnaire-and-image-links {
+  margin-top: bsize(3);
+  margin-bottom: bsize(3);
+
+  div[class*="col"] {
+    height: 250px;
+  }
+}
+
+
+@include media-breakpoint-down(lg) {
+  .questionnaire-and-image-links {
+    div[class*="col"] {
+      margin-top: .5rem;
+    }
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
+  .questionnaire-and-image-links {
+    .questionnaire-container {
+      height: auto !important;
+
+      .questionnaire {
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}

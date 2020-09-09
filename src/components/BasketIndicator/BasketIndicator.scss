@@ -1,0 +1,111 @@
+.basket-indicator {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 40;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  .icon {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: white;
+    box-shadow: $box-shadow-sm;
+  }
+
+
+  .list {
+    display: none;
+    background: $primary;
+    box-shadow: $box-shadow-sm;
+    border-radius: $border-radius;
+    color: $white;
+    padding: 1rem .75rem;
+    margin-bottom: bsize(3);
+    position: relative;
+
+
+    &.basket-indicator-list-enter {
+      opacity: 0;
+      transform: scaleY(.75) translateY(5rem);
+      display: block;
+    }
+
+    &.basket-indicator-list-enter-done {
+      opacity: 1;
+      transform: scaleY(1) translateY(0);
+      display: block;
+    }
+
+    &.basket-indicator-list-enter-active {
+      display: block;
+      opacity: 1;
+      transform: scaleY(1) translateY(0);
+      transition: opacity 200ms, transform 300ms;
+      transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+
+    &.basket-indicator-list-exit {
+      opacity: 1;
+      transform: scaleY(1) translateY(0);
+      display: block !important;
+    }
+
+    &.basket-indicator-list-exit-active {
+      display: block !important;
+      opacity: 0;
+      transform: scaleY(.75) translateY(5rem);
+      transition: opacity 200ms, transform 300ms;
+    }
+
+    &.basket-indicator-list-exit-done {
+      opacity: 0;
+      display: none;
+    }
+
+    &::after {
+      $size: .5rem;
+      content: '';
+      position: absolute;
+      bottom: -$size;
+      right: 1.3rem;
+      width: 0;
+      height: 0;
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-top: $size solid $primary;
+    }
+
+    .list-item {
+      padding: .5rem .5rem;
+      display: block;
+      background-color: $primary;
+      border-radius: $border-radius;
+      position: relative;
+
+      &:not(:last-child)::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .5);
+      }
+
+      &:hover {
+        transition: background-color .3s;
+        background-color: darken($primary, 8);
+      }
+
+      svg {
+        margin-right: .5rem;
+      }
+
+    }
+  }
+}

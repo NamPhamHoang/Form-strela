@@ -1,0 +1,30 @@
+.modal-backdrop {
+  background-color: white;
+
+  &.show {
+    opacity: .75;
+  }
+}
+
+.modal-content {
+  box-shadow: $box-shadow;
+  border: none;
+
+  .modal-header {
+    border-bottom: none;
+
+    .modal-title.h4 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .modal-footer {
+    border-top: none;
+    justify-content: space-between;
+  }
+
+  .btn-primary {
+    color: $white;
+  }
+}

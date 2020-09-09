@@ -1,0 +1,165 @@
+.basket .items {
+  .items-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    > header, article {
+      width: 100%;
+      margin-top: bsize(3);
+      border-radius: $border-radius;
+      display: flex;
+      align-items: center;
+
+      .delete {
+        flex-basis: 2.6rem;
+      }
+    }
+
+    > header {
+      padding: .75rem bsize(4);
+      color: $white;
+      background: $primary;
+    }
+
+    > article {
+      padding: .25rem bsize(4);
+      background: $white;
+      box-shadow: $box-shadow-sm;
+
+      .item-title {
+        text-transform: uppercase;
+      }
+
+      .title {
+        font-weight: 500;
+      }
+
+      .price {
+        color: $primary;
+        font-weight: 500
+      }
+
+    }
+  }
+
+  .sum {
+    margin-top: bsize(5);
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+
+    .pricing {
+      color: $primary;
+
+      h6 {
+        font-size: $font-size-20;
+        margin-bottom: 0;
+        margin-right: bsize(4);
+      }
+    }
+
+    .button .btn {
+      color: $white;
+      font-size: $font-size-20;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .items-list {
+      > header, article {
+        .item-title {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-only(xl) {
+    .items-list {
+      > header, article {
+        .quantity {
+          flex-basis: 10rem;
+        }
+
+        .price {
+          flex-basis: 10rem;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    .items-list {
+      > header, article {
+        .quantity {
+          flex-basis: 8rem;
+        }
+
+        .price {
+          flex-basis: 6rem;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    .sum {
+      justify-content: space-between;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .items-list {
+      > header {
+        display: none;
+      }
+
+      > article {
+        flex-wrap: wrap;
+        padding-bottom: bsize(2);
+
+        .item-title {
+          font-weight: 600;
+          flex-basis: 100%;
+          margin: bsize(2) 0;
+        }
+
+        .quantity {
+          flex-grow: 1;
+        }
+
+        .price {
+          flex-grow: 1;
+        }
+      }
+    }
+
+    .sum {
+      flex-wrap: wrap;
+
+      .pricing {
+        text-align: center;
+        width: 100%;
+
+        h6 {
+          margin-right: 0;
+        }
+      }
+
+      .button {
+        width: 100%;
+        margin-top: bsize(3);
+
+        .btn {
+          font-size: $font-size-base;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+}

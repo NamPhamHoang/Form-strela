@@ -1,0 +1,170 @@
+.order-food-show {
+  position: relative;
+  overflow: hidden;
+
+  .logo-container {
+    position: absolute;
+    top: 0;
+    right: 3rem;
+    height: 6rem;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    border-bottom-left-radius: $border-radius * 2;
+    border-bottom-right-radius: $border-radius * 2;
+
+    img {
+      height: 6rem;
+      width: auto;
+    }
+  }
+
+  .add-button {
+    margin-bottom: 2.2rem;
+    margin-right: 11rem;
+  }
+
+  .tab-buttons {
+    .btn-primary,
+    .btn-outline-primary:hover {
+      color: $white;
+    }
+  }
+
+  .menu-item {
+    margin-top: bsize(3);
+    display: flex;
+    align-items: center;
+    padding: bsize(2) bsize(3);
+
+    .main {
+      flex-grow: 1;
+
+      h6 {
+        margin-bottom: 0;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      .description {
+        font-weight: 300;
+        font-size: $font-size-14;
+      }
+
+      .price {
+        margin-top: bsize(1);
+        display: flex;
+        align-items: flex-end;
+        line-height: 1;
+
+        .main-price {
+          margin-right: bsize(2);
+          color: $primary;
+          font-weight: 500;
+        }
+
+        .sizes {
+          font-weight: 500;
+          font-size: $font-size-14;
+        }
+      }
+    }
+
+    .add-to-card-wrapper {
+
+
+      .btn {
+        width: 3.5rem;
+        height: 3rem;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+      }
+    }
+  }
+
+
+  @include media-breakpoint-down(md) {
+    .tab-buttons {
+      .btn {
+        margin-top: bsize(2);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .logo-container {
+      right: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .add-button {
+      width: 100%;
+      margin: bsize(3) 0;
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    .logo-container {
+      display: none;
+    }
+
+    .menu-item {
+      flex-wrap: wrap;
+
+      .main, .add-to-card-wrapper {
+        width: 100%;
+      }
+
+      .add-to-card-wrapper {
+        display: flex;
+        margin-top: bsize(3);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .main {
+        .price {
+          flex-wrap: wrap;
+
+          .main-price, .sizes {
+            width: 100%;
+            text-align: center;
+            margin-top: bsize(2);
+          }
+
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .background-square-primary {
+      right: 100px;
+      top: -150px;
+      width: 200px;
+      height: 200px;
+      transform: rotate(-20deg);
+    }
+
+    .menu-item {
+      .main {
+        .description {
+          min-height: 1rem;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    .add-button {
+      width: 17.5rem;
+      margin-bottom: bsize(2);
+    }
+  }
+}

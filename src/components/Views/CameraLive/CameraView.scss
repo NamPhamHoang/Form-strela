@@ -1,0 +1,26 @@
+.camera-view {
+  a {
+    display: block;
+    transition: transform .3s;
+
+    &:hover {
+      transform: scale(.9);
+    }
+
+    figure {
+
+      img {
+        border-radius: $border-radius;
+        width: 100%;
+      }
+
+      figcaption {
+        text-align: center;
+        margin-top: bsize(3);
+        font-size: $font-size-20;
+        font-weight: 300;
+      }
+    }
+  }
+
+}

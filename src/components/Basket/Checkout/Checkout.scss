@@ -1,0 +1,99 @@
+.basket .checkout {
+  .btn-payment {
+    margin-right: bsize(3);
+    border-color: $primary;
+    background: $white;
+    padding: bsize(3) bsize(1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-size-base;
+    width: 9rem;
+    height: 9rem;
+    transition: color .3s, background-color .3s, transform .3s;
+
+    &:hover {
+      transform: scale(.95);
+      color: $gray-900;
+    }
+
+    &.active {
+      color: $white;
+      background-color: $primary;
+    }
+
+    .img-container {
+      width: 7.5rem;
+      height: 5rem;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .checkout-card {
+    font-size: $font-size-24;
+    font-weight: 500;
+    padding: 0 bsize(3) bsize(6);
+    position: relative;
+
+    .btn {
+      color: $white;
+      display: block;
+      width: calc(100% - 2rem);
+      margin: 0 bsize(3);
+      font-size: $font-size-18;
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+    }
+
+    header {
+      padding: bsize(3) 0;
+      border-bottom: 1px solid $gray-900;
+
+      h6 {
+        margin-bottom: 0;
+        text-align: center;
+        font-size: inherit;
+      }
+    }
+
+    .prices {
+      border-bottom: 1px solid $gray-900;
+
+      .sum-and-ship,
+      .total-sum {
+        padding: bsize(2) 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        > div {
+          width: 50%;
+        }
+      }
+
+      .sum-and-ship {
+        color: $primary;
+        padding-top: bsize(4);
+        border-bottom: 1px solid $gray-900;
+      }
+
+    }
+  }
+
+
+  @include media-breakpoint-down(md) {
+    .checkout-card {
+      margin-top: bsize(5);
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    .checkout-card {
+      font-size: $font-size-18;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.background-square {
+  position: absolute;
+  border-radius: $border-radius;
+  z-index: -100;
+  pointer-events: none;
+}
+
+@mixin background-square($color) {
+  background-color: $color;
+}
+
+$colors: (
+        'primary': $primary,
+        'light-gray': $gray-100,
+);
+
+@each $name, $color in $colors {
+  .background-square-#{$name} {
+    @include background-square($color);
+  }
+}
+
+
+

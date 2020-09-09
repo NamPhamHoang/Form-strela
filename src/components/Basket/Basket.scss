@@ -1,0 +1,17 @@
+.basket {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: bsize(5);
+
+
+  @include media-breakpoint-up(md) {
+    .background-square-primary {
+      right: 100px;
+      top: -250px;
+      transform: rotate(-30deg);
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+}

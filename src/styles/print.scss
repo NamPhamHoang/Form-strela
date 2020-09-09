@@ -1,0 +1,64 @@
+@media print {
+  .main-header,
+  .main-footer,
+  .breadcrumb-own,
+  .site .collapse,
+  .card-news .btn-social,
+  .card-news .list,
+  .appendable-header .main-element > div:not(.appendable-logo) {
+    display: none;
+  }
+
+  .appendable-header {
+    display: block;
+
+    .appendable-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100% !important;
+
+      img {
+        max-width: 150px;
+        display: block;
+      }
+    }
+  }
+
+  .card-layout {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .btn-print {
+    display: none !important;
+  }
+
+  .card-news > .row > .content > *:not(.photo) {
+    margin-left: 0 !important;
+  }
+
+
+  .site {
+    .collapse {
+      display: block;
+    }
+
+    .collapse-styles .collapse {
+      margin-top: 0;
+    }
+
+    .btn-collapse {
+      color: $gray-900;
+      background: none;
+      border: none;
+      font-size: $font-size-24;
+      padding: 0;
+      margin: 0;
+
+      svg {
+        display: none;
+      }
+    }
+  }
+}

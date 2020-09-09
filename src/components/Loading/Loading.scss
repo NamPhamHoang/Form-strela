@@ -1,0 +1,16 @@
+.loading {
+  min-height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    position: relative;
+    color: $primary;
+    opacity: .4;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+
+}

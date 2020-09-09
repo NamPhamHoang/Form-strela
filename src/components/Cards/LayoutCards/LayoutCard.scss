@@ -1,0 +1,10 @@
+.card-layout {
+  padding: bsize(4) bsize(5) bsize(5);
+}
+
+@include media-breakpoint-down(sm) {
+  .card-layout {
+    padding: bsize(2) bsize(3) bsize(3);
+  }
+
+}

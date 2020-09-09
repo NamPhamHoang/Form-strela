@@ -1,0 +1,17 @@
+.btn-back {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+
+  &:hover {
+    svg {
+      transform: scale(1.2);
+    }
+  }
+
+  svg {
+    transition: transform .3s;
+    color: $primary;
+  }
+}

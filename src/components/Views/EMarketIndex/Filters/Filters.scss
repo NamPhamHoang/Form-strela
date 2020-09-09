@@ -1,0 +1,95 @@
+.e-market-index .filters {
+  flex-wrap: wrap;
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .selects {
+    flex-basis: 25%;
+    max-width: 50%;
+  }
+
+  .price-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid $primary;
+    border-radius: $border-radius;
+    height: 49px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 80%;
+      left: calc(50%);
+      top: 10%;
+      background-color: $primary;
+    }
+
+    .form-group {
+      margin-bottom: 0;
+      width: 50%;
+
+      input {
+        border: none;
+        height: 100%;
+      }
+    }
+  }
+
+  .photo-only {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+
+    .custom-control {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  @include media-breakpoint-only(lg) {
+    .selects {
+      flex-basis: 33.33333%;
+      max-width: 66.66666%;
+    }
+
+    .photo-only,
+    .selects:nth-child(5) {
+      flex-basis: 50%;
+    }
+  }
+
+  @include media-breakpoint-between(xs, md) {
+    .selects {
+      flex-basis: 50%;
+      max-width: 100%;
+    }
+    .photo-only {
+      flex-basis: 50%;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: bsize(3);
+
+    .selects {
+      max-width: 100%;
+      flex-basis: 100%;
+    }
+    .photo-only {
+      flex-basis: 100%;
+      margin-top: bsize(3);
+    }
+
+    .price-inputs {
+      .floating-label {
+        width: 50%;
+      }
+    }
+  }
+}
+

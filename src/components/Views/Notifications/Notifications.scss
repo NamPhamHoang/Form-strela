@@ -1,0 +1,16 @@
+.notifications {
+  .table-simple {
+    thead, tbody {
+      th, td {
+        &:nth-child(1) {
+          min-width: 8rem;
+          max-width: 14rem;
+        }
+
+        &:nth-child(3) {
+          min-width: 15rem;
+        }
+      }
+    }
+  }
+}

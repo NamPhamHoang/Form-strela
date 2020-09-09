@@ -1,0 +1,118 @@
+.simulated-table {
+  flex-direction: column;
+  min-width: 100%;
+  margin-bottom: $spacer;
+  color: $table-color;
+  background-color: $table-bg;
+  flex-wrap: wrap;
+
+  .collapse,
+  .collapsing {
+    grid-column: 1 / 6;
+  }
+
+  .tr {
+    min-width: 100%;
+    display: grid;
+  }
+
+  .td, .th {
+    float: left;
+  }
+
+  .bg-light {
+    .td {
+      border: none;
+    }
+  }
+
+  .inside-collapse {
+    padding: 0.3rem;
+    background: $gray-100;
+  }
+
+  .thead, .tbody {
+    min-width: 100%;
+  }
+
+  .action-buttons {
+    padding: .4rem 0 0 !important;
+
+    .btn {
+      &:not(:last-child) {
+        margin-right: bsize(2);
+      }
+
+      padding: .01rem bsize(3);
+    }
+
+
+    .btn-primary {
+      color: $white;
+    }
+  }
+
+  .collapse {
+    width: 100%;
+  }
+
+  .th,
+  .td {
+    padding: $table-cell-padding;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+  }
+
+  .thead .th {
+    vertical-align: bottom;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  .tbody + .tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+}
+
+.simulated-table-sm {
+  .th,
+  .td {
+    padding: $table-cell-padding-sm;
+  }
+}
+
+.simulated-table-simple {
+  .thead, .tbody {
+
+    .tr {
+      border-bottom: 1px solid $gray-300;
+    }
+
+    .th, .td {
+      border-top: none;
+      border-bottom: none;
+    }
+
+    .th {
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .td {
+      padding-top: bsize(2);
+      padding-bottom: bsize(2);
+    }
+
+    @include media-breakpoint-down(sm) {
+      .th.action-buttons {
+        display: none;
+      }
+
+      .td.action-buttons {
+        grid-row: 2/3;
+        margin-bottom: bsize(3);
+        margin-left: bsize(1);
+      }
+    }
+  }
+
+}

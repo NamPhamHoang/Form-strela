@@ -1,0 +1,149 @@
+
+.company-index .item-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3.5rem;
+  animation: cardsAppear .3s;
+
+  .content-container {
+    width: 100%;
+  }
+
+  .logo {
+    border-radius: $border-radius * 3;
+    padding-right: .5rem;
+    z-index: -100;
+    position: absolute;
+    left: 0;
+    background: $gray-100;
+    width: 10rem;
+    height: 8rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @include media-breakpoint-only(lg) {
+    .content-container {
+      width: 92.3%;
+    }
+  }
+
+
+  .content {
+    width: calc(100% - 9rem);
+    margin-left: 9rem;
+    padding: bsize(2) bsize(3);
+    background: $white;
+    border-top-right-radius: $border-radius * 2;
+    border-bottom-right-radius: $border-radius * 2;
+    box-shadow: $box-shadow-sm;
+    display: flex;
+    align-items: center;
+
+    .data {
+      flex-grow: 1;
+
+      h6 {
+        font-size: $font-size-24;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+
+      .data-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        > div {
+          width: 50%;
+          font-size: $font-size-14;
+        }
+      }
+    }
+
+    .link-container {
+      .link {
+        background: $primary;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: $border-radius;
+
+        svg {
+          color: $white;
+        }
+      }
+    }
+
+
+  }
+
+  @include media-breakpoint-only(lg) {
+    .content {
+      width: calc(100% - 5rem);
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    .content {
+      width: 100%;
+      margin-left: 0;
+      border-radius: $border-radius * 2;
+
+    }
+    .logo {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+
+    .content {
+      width: 100%;
+      margin-left: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: $border-radius * 3;
+      border-bottom-right-radius: $border-radius * 3;
+
+      .data {
+        .data-container {
+          > div {
+            width: 100%;
+          }
+
+          > div:nth-child(1) {
+            order: 2;
+          }
+
+          > div:nth-child(2) {
+            order: 3;
+          }
+
+          > div:nth-child(3) {
+            order: 1;
+          }
+
+          > div:nth-child(4) {
+            order: 4;
+          }
+        }
+      }
+    }
+    .logo {
+      width: 100%;
+      position: static;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}

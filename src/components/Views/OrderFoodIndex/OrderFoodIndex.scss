@@ -1,0 +1,37 @@
+.order-food-index {
+  .buttons {
+    display: flex;
+    margin-top: bsize(4);
+
+    .btn {
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 500;
+
+      svg {
+        margin-right: bsize(2);
+      }
+    }
+
+    .btn:first-child {
+      margin-right: bsize(3);
+    }
+  }
+
+
+  @include media-breakpoint-down(sm) {
+    .buttons {
+      flex-wrap: wrap;
+      margin-top: 0;
+
+      > div {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+        margin: bsize(2) 0;
+      }
+    }
+  }
+}

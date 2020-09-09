@@ -1,0 +1,9 @@
+.section-title {
+  text-transform: uppercase;
+  font-size: $font-size-18;
+  margin-top: bsize(4);
+
+  @include media-breakpoint-down(sm) {
+    margin-top: bsize(4) / 2;
+  }
+}

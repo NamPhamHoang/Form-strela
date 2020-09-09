@@ -1,0 +1,17 @@
+.tab-title {
+  display: inline-block;
+  font-size: $font-size-base;
+  border-radius: $border-radius;
+  padding: .75rem 1.25rem;
+}
+
+@each $color, $value in $theme-colors {
+  .tab-title-#{$color} {
+    background-color: $value;
+    color: color-yiq($value);
+  }
+}
+
+.tab-title-primary {
+  color: $white;
+}

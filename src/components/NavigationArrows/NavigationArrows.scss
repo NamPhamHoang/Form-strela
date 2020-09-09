@@ -1,0 +1,33 @@
+.navigation-arrows {
+  justify-content: space-between;
+  color: $primary;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  > div:first-child svg {
+    margin-right: bsize(2);
+  }
+
+  > div:last-child svg {
+    margin-left: bsize(2);
+  }
+
+  .disabled {
+    color: $gray-600;
+    opacity: .3;
+  }
+
+
+  @include media-breakpoint-down(sm) {
+    margin-top: bsize(2);
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: $font-size-12;
+    justify-content: center;
+
+    svg {
+      font-size: $font-size-base;
+    }
+  }
+}

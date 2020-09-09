@@ -1,0 +1,163 @@
+.investments-map {
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+  height: 70vh;
+
+  .categories-manager {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25rem;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    transition: transform .3s;
+    transform: translateX(21rem);
+    will-change: transform;
+
+    &.visible {
+      transform: translateX(0);
+    }
+
+    .button {
+      width: 2rem;
+      margin-right: 2rem;
+      margin-top: bsize(2);
+
+      button {
+        box-shadow: $box-shadow;
+        padding: .5rem .8rem;
+        color: $white;
+      }
+    }
+
+    .categories {
+      padding: .5rem;
+      flex-grow: 1;
+      overflow-y: scroll;
+      background: $white;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+
+      .header-icons {
+        width: 100%;
+        display: flex;
+
+        .btn {
+          padding: .5rem .5rem 0;
+        }
+      }
+
+
+      .category {
+        display: flex;
+        align-items: center;
+
+        &:not(:first-child) {
+          margin-top: bsize(3);
+        }
+
+        .marker-thumb {
+          max-height: 2.2rem;
+          width: auto;
+          margin-right: bsize(2);
+        }
+      }
+    }
+  }
+
+  .leaflet-container {
+    height: 70vh;
+    border-radius: $border-radius;
+  }
+
+  .leaflet-control-zoom {
+    border: none !important;
+
+    a {
+      border-radius: $border-radius !important;
+      margin-bottom: bsize(2);
+      box-shadow: $box-shadow;
+      color: $white;
+      background: $primary;
+      border: none;
+      transition: background-color .3s;
+
+      &:hover {
+        color: $white;
+        background: darken($primary, 7.5%);
+        border: none;
+      }
+    }
+  }
+
+  .investment-popup {
+    padding: 0;
+    width: 300px;
+    border-radius: 0 0 $border-radius $border-radius;
+    box-shadow: $box-shadow;
+    border-top: 5px solid $primary;
+
+    .leaflet-popup-content-wrapper {
+      padding: 0;
+      box-shadow: none;
+    }
+
+    .leaflet-popup-content {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      border-radius: 0 0 $border-radius $border-radius;
+    }
+
+    img {
+      max-width: 300px;
+    }
+
+    p {
+      margin: 0;
+      padding: .5rem .75rem .25rem;
+    }
+
+    a {
+      color: $primary;
+      padding: .5rem .75rem .25rem;
+      text-align: right;
+      display: block;
+      width: 100%;
+    }
+  }
+
+
+  @include media-breakpoint-only(xs) {
+    .categories-manager {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s, background-color .3s;
+      transform: translateX(calc(100% - 4rem));
+      will-change: transform, background-color;
+
+      .categories {
+        opacity: 0;
+        transition: opacity .3s;
+      }
+
+      &.visible {
+        background-color: $white;
+        transform: translateX(0);
+
+        .categories {
+          opacity: 1;
+        }
+      }
+
+      .button {
+        margin-right: 0;
+        margin-left: bsize(2);
+        margin-bottom: bsize(3);
+      }
+    }
+  }
+}

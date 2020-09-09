@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="221b4eec-9b3f-4c33-89f5-ae8f2230d792" name="jarocin_szablony" url="http://jarocin.loh-test.pl">
+        <fileTransfer host="jarocin.loh-test.pl" port="22" rootFolder="/home/users/jarocin_szablony" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="e903e97b-2166-45d9-b676-39b841784cbb" name="jarocin_front" url="http://test.jarocin.pl">
+        <fileTransfer host="test.jarocin.pl" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="8416c754-b0db-4d23-ac14-be365ef64772" name="invsyst" url="http://195.78.66.87">
+        <fileTransfer host="195.78.66.87" port="222" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="222" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

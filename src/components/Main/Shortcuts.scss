@@ -1,0 +1,166 @@
+.shortcuts {
+  .row {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    div[class*="col"] {
+      padding: 0;
+
+      .item {
+        &:hover {
+          text-decoration: none;
+        }
+
+        height: 150px;
+        font-size: $font-size-14;
+        font-weight: 300;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        padding: 1rem 0.25rem;
+        transition: background .3s, transform .3s;
+
+        svg {
+          transition: color .3s;
+        }
+
+        .text {
+          overflow: visible;
+          max-height: 65px;
+          transition: color .3s;
+          padding-top: 2rem;
+
+          strong {
+            font-weight: 500;
+          }
+        }
+      }
+
+      .e-targ {
+        .text {
+          max-height: 80px;
+        }
+      }
+    }
+  }
+}
+
+.shortcuts-primary {
+  .item {
+    border-bottom: 1px solid $light;
+    border-left: 1px solid $light;
+
+    &:hover {
+      z-index: 100;
+      background: $primary;
+
+      .text {
+        color: $white;
+      }
+
+      svg {
+        color: $white;
+      }
+    }
+
+    svg {
+      color: $primary;
+    }
+
+    .text {
+      color: $gray-900;
+    }
+  }
+}
+
+.shortcuts-secondary {
+  .item {
+    color: $white;
+
+    &:hover {
+      transform: scale(1.1);
+      background: white;
+
+      .text {
+        color: $primary
+      }
+
+      svg {
+        color: $primary;
+      }
+    }
+
+    border-bottom: 1px solid $white;
+    border-left: 1px solid $white;
+  }
+}
+
+
+@include media-breakpoint-only(xl) {
+  .shortcuts {
+    div[class*="col"]:nth-child(n+7) .item {
+      border-bottom: none;
+    }
+
+    div[class*="col"]:nth-child(1) .item {
+      border-left: none;
+    }
+
+    div[class*="col"]:nth-child(7) .item {
+      border-left: none;
+    }
+  }
+}
+
+@include media-breakpoint-between(md, lg) {
+  .shortcuts {
+    div[class*="col"]:nth-child(n+9):nth-child(-n+12) .item {
+      border-bottom: none;
+    }
+
+    div[class*="col"]:nth-child(1) .item,
+    div[class*="col"]:nth-child(5) .item,
+    div[class*="col"]:nth-child(9) .item {
+      border-left: none;
+    }
+
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  .shortcuts {
+    div[class*="col"]:nth-child(n+10):nth-child(-n+12) .item {
+      border-bottom: none;
+    }
+
+    div[class*="col"]:nth-child(1) .item,
+    div[class*="col"]:nth-child(4) .item,
+    div[class*="col"]:nth-child(7) .item,
+    div[class*="col"]:nth-child(10) .item {
+      border-left: none;
+    }
+
+  }
+}
+
+
+@include media-breakpoint-only(xs) {
+  .shortcuts {
+    div[class*="col"]:nth-child(n+11):nth-child(-n+12) .item {
+      border-bottom: none;
+    }
+
+    div[class*="col"]:nth-child(1) .item,
+    div[class*="col"]:nth-child(3) .item,
+    div[class*="col"]:nth-child(5) .item,
+    div[class*="col"]:nth-child(7) .item,
+    div[class*="col"]:nth-child(9) .item,
+    div[class*="col"]:nth-child(11) .item {
+      border-left: none;
+    }
+
+  }
+}
+

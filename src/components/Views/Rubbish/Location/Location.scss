@@ -1,0 +1,52 @@
+.rubbish .location {
+  margin-top: bsize(4);
+  display: flex;
+  align-items: center;
+
+  .modal {
+    .delete-button {
+      padding: 0;
+    }
+  }
+
+  > *:not(:last-child) {
+    margin-right: bsize(3);
+  }
+
+  .form-group {
+    width: 23rem;
+    margin-bottom: 0;
+  }
+
+  .btn {
+    display: block;
+    color: $white;
+    height: 100%;
+    padding: 0.55rem 1.2rem;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @include media-breakpoint-down(lg) {
+    flex-wrap: wrap;
+
+    .form-group,
+    .btn {
+      width: calc(50% - 1rem);
+    }
+    p {
+      width: 100%;
+      margin-top: bsize(3);
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    .form-group,
+    .btn {
+      margin-top: bsize(3);
+      width: 100%;
+    }
+  }
+}

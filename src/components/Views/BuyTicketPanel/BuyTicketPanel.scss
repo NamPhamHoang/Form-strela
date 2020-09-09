@@ -1,0 +1,95 @@
+.buy-ticket-panel {
+  .thead, .tbody {
+    .tr {
+      grid-template-columns: minmax(7rem, 2fr) minmax(7rem, 1fr) minmax(4rem, 1fr) minmax(4rem, 1fr) 15rem;
+    }
+
+    .td, .th {
+      word-break: break-all;
+    }
+
+    .collapse,
+    .collapsing {
+      grid-column: 1 / 6;
+
+      .inside-collapse {
+        padding: 0.3rem;
+        background: $gray-100;
+      }
+    }
+  }
+
+  .inside-collapse {
+    padding: bsize(3) !important;
+    display: flex;
+    align-items: center;
+
+    > div {
+      margin: 0 bsize(3);
+    }
+
+    .properties {
+      min-width: 14rem;
+
+      ul {
+        margin-bottom: 0;
+      }
+
+      li {
+        font-size: $font-size-18;
+      }
+
+      li:not(:first-child) {
+        margin-top: bsize(3);
+      }
+    }
+
+    .consultant-card {
+      margin-top: bsize(5);
+      min-width: 17rem;
+    }
+
+    .qr-code {
+      min-width: 10rem;
+    }
+
+    .help {
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .inside-collapse {
+      flex-wrap: wrap;
+
+      .properties, .qr-code,
+      .consultant-card, .help {
+        flex-grow: 1;
+      }
+
+      .qr-code {
+        display: flex;
+        justify-content: center;
+      }
+
+      .consultant-card {
+        margin-top: bsize(5) + 1rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .thead, .tbody {
+      .tr {
+        grid-template-columns: minmax(7rem, 2fr) minmax(7rem, 1fr) minmax(4rem, 1fr) minmax(4rem, 1fr);
+      }
+
+    }
+
+    .td.action-buttons {
+      grid-column: 1/span 4;
+    }
+  }
+}

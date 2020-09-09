@@ -1,0 +1,38 @@
+.btn-wide-icon {
+  &:focus,
+  &:active,
+  &:hover {
+    color: white;
+  }
+
+  &:hover {
+    border-color: transparent;
+    transform: scale(1.2);
+  }
+
+  &.active {
+    color: $primary;
+    background: $white;
+  }
+
+  position: relative;
+  width: 100%;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: $border-radius;
+  border: 2px solid $white;
+  background: transparent;
+  padding: 1.5rem 0.5rem;
+  transition: color .3s, background .3s, border-color .3s, transform .3s;
+
+  span {
+    padding-top: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: $font-size-base;
+  }
+}

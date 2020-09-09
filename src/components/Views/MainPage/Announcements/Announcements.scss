@@ -1,0 +1,13 @@
+@include media-breakpoint-up(lg) {
+  .announcements {
+    background: url("../img/lgray.png");
+    background-size: 50% 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+}
+
+.announcements {
+  padding-top: bsize(3);
+  padding-bottom: bsize(4);
+}

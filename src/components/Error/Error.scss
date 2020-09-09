@@ -1,0 +1,25 @@
+.error {
+  min-height: 300px;
+  height: 100%;
+  margin: bsize(3) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h3, p {
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 7rem;
+    color: $primary;
+    font-weight: 200;
+  }
+
+  p {
+    font-weight: 300;
+    opacity: .6;
+    font-size: $font-size-18;
+  }
+}

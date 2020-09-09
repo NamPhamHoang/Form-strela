@@ -1,0 +1,185 @@
+@mixin formControlOutline($color) {
+  border: $input-border-width solid $color;
+  color: $color;
+
+  label {
+    color: $color;
+  }
+
+  &:focus {
+    color: $color;
+    background-color: $input-focus-bg;
+    border-color: transparent;
+    outline: 0;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $input-box-shadow, $input-focus-box-shadow;
+    } @else {
+      box-shadow: $input-focus-box-shadow;
+    }
+  }
+
+
+  &::placeholder {
+    color: $input-placeholder-color;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: $input-disabled-bg;
+  }
+}
+
+.outline-secondary {
+  color: $secondary;
+}
+
+.form-control-outline-secondary {
+  @include formControlOutline($secondary);
+}
+
+.outline-primary {
+  color: $primary;
+}
+
+.form-control-outline-primary {
+  @include formControlOutline($primary);
+}
+
+.form-control-shadow {
+  border: $input-border-width solid transparent;
+  box-shadow: $box-shadow-sm;
+
+  &:focus {
+    background-color: $input-focus-bg;
+    border-color: transparent;
+    outline: 0;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $input-box-shadow, $input-focus-box-shadow;
+    } @else {
+      box-shadow: $input-focus-box-shadow;
+    }
+  }
+;
+
+  &::placeholder {
+    color: $input-placeholder-color;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: $input-disabled-bg;
+  }
+}
+
+.floating-label {
+  position: relative;
+
+  .form-control {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .form-label {
+    position: absolute;
+    top: 0.5rem;
+    left: 1.28rem;
+    line-height: 1.5;
+    transition: font-size .3s, top .3s;
+  }
+
+  .form-label.select {
+    pointer-events: none;
+  }
+
+  .form-label.active {
+    font-size: 0.7rem;
+    top: .1rem;
+  }
+
+  svg {
+    position: absolute;
+    top: 1rem;
+    right: .8rem;
+    pointer-events: none;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  &.date {
+    .form-control {
+      color: $white;
+    }
+
+    .form-label.active + .form-control {
+      color: $gray-900;
+    }
+
+    .form-control:focus,
+    .form-control:active {
+      color: rgba(white, 0);
+    }
+
+    .form-control::-webkit-inner-spin-button {
+      display: none;
+      -webkit-appearance: none;
+    }
+
+    .form-control::-webkit-clear-button {
+      display: none;
+    }
+
+    .form-control::-webkit-calendar-picker-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+}
+
+.floating-label.floating-label-lg {
+  label {
+    top: 0.8rem;
+  }
+
+  label.active {
+    top: .2rem;
+  }
+}
+
+.custom-radio {
+
+  .custom-control-input:checked ~ .custom-control-label::after {
+    background-image: none;
+  }
+}
+
+.custom-checkbox,
+.custom-radio {
+
+  .custom-control-label {
+    cursor: pointer;
+  }
+
+  .custom-control-label::before {
+    border-color: $primary;
+  }
+}
+
+select option[disabled] {
+  display: none;
+}
+
+.form-group-spacing-md {
+  .form-group {
+    margin-bottom: 2rem;
+  }
+}

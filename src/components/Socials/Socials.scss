@@ -1,0 +1,34 @@
+.socials a {
+  color: $white;
+
+  svg {
+    transition: color .3s;
+  }
+}
+
+@mixin icon-color-hover($color) {
+  &:hover svg {
+    color: $color;
+  }
+}
+
+.socials a.fb {
+  @include icon-color-hover($fb)
+}
+
+.socials a.gplus {
+  @include icon-color-hover($gplus)
+}
+
+.socials a.tw {
+  @include icon-color-hover($tw)
+}
+
+.socials a.yt {
+  @include icon-color-hover($yt)
+}
+
+.socials a.ig {
+  @include icon-color-hover($ig)
+}
+

@@ -1,0 +1,38 @@
+.e-market-show {
+
+  .description {
+    h5.title {
+      font-size: $font-size-24;
+      margin-bottom: bsize(1);
+    }
+  }
+
+  .information, .price {
+    & svg {
+      color: $primary;
+      margin-right: bsize(1);
+    }
+  }
+
+  .information {
+    display: flex;
+    font-size: $font-size-14;
+
+    div:last-child {
+      margin-left: bsize(3);
+    }
+  }
+
+  .price {
+    margin-top: bsize(2);
+    font-size: $font-size-24;
+    font-weight: bold;
+  }
+
+  .text {
+    font-weight: 300;
+    margin-top: bsize(4);
+    text-align: justify;
+
+  }
+}

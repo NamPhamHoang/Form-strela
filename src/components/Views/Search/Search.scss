@@ -1,0 +1,144 @@
+.search {
+  position: relative;
+  overflow: hidden;
+
+  .category-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+      padding: bsize(2) 0;
+      //width: 19%;
+      width: 24%;
+    }
+
+    .btn-primary {
+      color: $white;
+    }
+
+    .btn-outline-primary:hover,
+    .btn-outline-primary:hover:focus {
+      color: $white;
+    }
+  }
+
+  .items {
+    margin-top: bsize(3);
+
+    .item {
+      padding: bsize(3);
+      margin-top: bsize(2);
+      border-radius: $border-radius * 3;
+      background: $gray-100;
+      display: flex;
+      align-items: center;
+
+      .image-container {
+        width: 120px;
+        height: 68px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      h6 {
+        margin-bottom: 0;
+        flex: 1;
+        margin-left: bsize(3);
+      }
+
+      .btn {
+        color: $white;
+        font-size: $font-size-base;
+      }
+    }
+  }
+
+}
+
+
+@include media-breakpoint-between(sm, xl) {
+  .search {
+    .background-square-primary {
+      right: 0;
+      width: 240px;
+      height: 128px;
+      top: -60px;
+      transform: rotate(-25deg);
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .search {
+    .category-buttons {
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .btn {
+        margin-top: bsize(2);
+        width: 49%;
+      }
+    }
+
+    .items {
+      .item {
+        .btn {
+          padding: bsize(1) bsize(2);
+
+        }
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
+  .search {
+    .background-square-primary {
+      width: 160px;
+
+    }
+
+    .items {
+      .item {
+        flex-wrap: wrap;
+
+        .btn {
+          width: 100%;
+          margin-left: 3rem;
+          margin-right: 3rem;
+          margin-top: bsize(3);
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .search {
+    .items {
+      .item {
+        .image-container {
+          width: 100%;
+          margin-left: 10%;
+          margin-right: 10%;
+          height: 120px;
+        }
+
+        h6 {
+          margin-top: bsize(3);
+          margin-left: 0;
+          text-align: center;
+        }
+      }
+    }
+
+    .category-buttons {
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}

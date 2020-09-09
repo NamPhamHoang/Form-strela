@@ -1,0 +1,6 @@
+@mixin opacity-hover {
+  transition: opacity .2s;
+  &:hover {
+    opacity: .6;
+  }
+}

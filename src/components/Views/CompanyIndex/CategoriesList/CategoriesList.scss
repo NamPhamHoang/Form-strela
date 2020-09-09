@@ -1,0 +1,85 @@
+.company-index .categories-list {
+  .categories-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: none;
+    border: none;
+
+    svg {
+      transform: rotate(180deg);
+      transition: transform .3s;
+    }
+
+    &.active {
+      svg {
+        transform: rotate(0);
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      display: none;
+    }
+  }
+
+  .categories-container {
+    background: $white;
+    box-shadow: $box-shadow-sm;
+    padding: 0 bsize(3);
+    margin-bottom: bsize(3);
+
+
+    .list {
+      padding: 2.5rem 0;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+
+      .item {
+        $border: 1px solid rgba($gray-600, .3);
+        display: flex;
+        align-items: center;
+        padding: bsize(2) bsize(3);
+        border-top: $border;
+        transition: background-color .3s, color .3s;
+        font-weight: 500;
+
+        &.active {
+          color: $primary;
+        }
+
+        &:last-child {
+          border-bottom: $border;
+        }
+
+        &:hover {
+          background-color: $primary;
+          color: white;
+        }
+
+        img {
+          max-height: 1rem;
+          width: 1rem;
+          margin-right: bsize(2);
+          filter: invert(.5) sepia(1) saturate(15) hue-rotate(150deg);
+        }
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      transition: max-height .3s;
+      max-height: 0;
+      overflow: hidden;
+      will-change: max-height;
+
+      &.active {
+        max-height: 600px;
+      }
+    }
+  }
+
+  @include media-breakpoint-only(xl) {
+    top: 8rem;
+    position: sticky;
+  }
+}

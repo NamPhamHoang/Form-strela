@@ -1,0 +1,44 @@
+.complete-data {
+  overflow-x: hidden;
+
+  .positioned-image {
+    display: none;
+  }
+
+  .main-title {
+    font-weight: 300;
+    margin: bsize(3) 0 bsize(5);
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 12rem;
+
+    .background-square-primary {
+      width: 500px;
+      height: 500px;
+      right: -60px;
+      top: 400px;
+      transform: rotate(-35deg);
+    }
+  }
+
+  @media (min-width: 1550px) {
+    .positioned-image {
+      display: block;
+      position: absolute;
+      top: 245px;
+      right: 220px;
+      width: 500px;
+      height: 500px;
+      border-radius: $border-radius * 2;
+    }
+  }
+}
