@@ -1,5 +1,58 @@
+.title_desription {
+    margin-bottom: 30px;
+}
 .form_strefa {
+    font-size: smaller;
     header {
         line-height: 1;
+    }
+    .col-padding {
+        padding-right: 4px;
+        padding-left: 10px;
+    }
+    .align-self-end {
+        align-self: end;
+    }
+    .btn-submit-form {
+        font-size: smaller;
+    }
+    .btn_add-circel {
+        position: absolute;
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50% 50%;
+        background-color: #3dbbed;
+        border: none;
+        outline-style: none;
+        margin-bottom: 25px;
+        right: -40px;
+    }
+    .row-height {
+        height: 50px;
+    }
+    .btn-submit-form {
+        font-size: 1rem;
+        margin-top: bsize(7);
+        color: #fff;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+        strong {
+          font-weight: 300;
+        }
+      }
+    @media screen and (max-width: 576px) {
+        .row-height {
+            height: auto;
+        }
+        .height_custom {
+            .form-control-shadow {
+                height: 60px;
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .btn_add-circel {
+            position: static;
+            margin-left: 15px;
+        }
     }
 }

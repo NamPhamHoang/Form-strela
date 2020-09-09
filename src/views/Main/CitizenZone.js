@@ -13,9 +13,9 @@ import BlueIcon from '../../components/BlueIcon/BlueIcon';
 import BackgroundSquare from '../../components/BackgroundSquare/BackgroundSquare';
 import { BlockFunctionModal } from '../../components/Modals/Modal';
 import FormStrefa from '../../components/FormStrefa/FormStrefa';
+
 const CitizenZone = () => {
     const [modal, setModal] = useState(false);
-    const [mainTab, setMainTab] = useState(true);
     const [formTab, setFormTab] = useState(false);
     return (
         <>
@@ -36,34 +36,31 @@ const CitizenZone = () => {
                 <div className="background-container">
                     <BackgroundSquare />
                 </div>
-                <Title>Strefa mieszkańca</Title>
-                        <BlueIcon icon={faIdCard} />
+                <Title className="citizen-card_title">Strefa mieszkańca</Title>
+                <BlueIcon icon={faIdCard} />
+                <Row>
+                    <Col lg={formTab ? 8 : 7} xl={formTab ? 9 : 6} className="description">
                         <div className="tab">
                             <Button
-                                className="tabLinks"
+                                className={!formTab ? "tabLinks mr-3" : "tabLinks active mr-3"}
                                 onClick={e => {
                                     e.preventDefault();
-                                    setMainTab(true);
-                                    setFormTab(false);
+                                    setFormTab(false)
                                 }}
                             >
                                 <strong>Mieszkaniec</strong>
                             </Button>
                             <Button
-                                className="tabLinks"
+                                className={formTab ? "tabLinks" : "tabLinks active"}
                                 onClick={e => {
                                     e.preventDefault();
                                     setFormTab(true);
-                                    setMainTab(false);
                                 }}
                             >
-                                <strong>Przedsiębiorca</strong>
+                                <strong> Przedsiębiorca</strong>
                             </Button>
                         </div>
-                <Row>
-                    <Col lg={7} xl={6} className="description">
-                       
-                        {formTab !== false ? (
+                        {!formTab ? (
                             <div>
                                 <p className="fw-300 fw-strong-500 text-justify">
                                     <strong>Jesteś mieszkańcem Gminy Jarocin!</strong>
@@ -84,14 +81,14 @@ const CitizenZone = () => {
                                     }}
                                     className="more-info more-info-citizen-zone"
                                 >
-                                    <strong>Załóż</strong> kartę
+                                    <strong>Zostan</strong> partnerem
                                 </Button>
                             </div>
                         ) : (
                             <FormStrefa />
                         )}
                     </Col>
-                    {formTab !== false ? (
+                    {!formTab ? (
                         <Col lg={4} xl={5} className="card-image">
                             <div className="photo-container" style={{ backgroundImage: `url(${img})` }}>
                                 <img src={img} alt="Obraz ilustrujący kartę mieszkańca" />

@@ -6,7 +6,9 @@
   padding-bottom: 0;
   margin-bottom: 2rem;
   position: relative;
-
+  .citizen-card_title {
+    margin-bottom: 0px;
+  }
   .ct-enter {
     opacity: 0;
     transform: scale(.98);
@@ -86,14 +88,22 @@
       margin-top: 0;
       margin-bottom: bsize(5);
     }
-
-    .tabLinks {
-      @extend .more-info;
-      @extend .more-info-citizen-zone;
-      strong {
-        font-weight: 500;
+    .tab {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .tabLinks {
+        @extend .more-info;
+        @extend .more-info-citizen-zone;
+        strong {
+          font-weight: 500;
+        }
+        margin-bottom: 30px;
       }
-      margin-top: bsize(1)
+      Button.active {
+        background-color: white;
+        color: blue;
+      }
     }
   }
 
@@ -102,7 +112,6 @@
     padding-right: bsize(4);
     height: 300px;
     width: 100%;
-    margin-top: 4rem;
     border-radius: $border-radius;
 
     .photo-container {
@@ -193,9 +202,8 @@
         margin-right: auto;
       }
       .tabLinks{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        margin-right: 0px !important;
+        width: 100%;
       }
     }
   }
@@ -210,8 +218,6 @@
 
       .described-icon {
         width: 33.33%;
-
-
         svg {
           display: block;
           color: $primary;
