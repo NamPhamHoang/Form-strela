@@ -6,10 +6,9 @@ import Button from 'react-bootstrap/Button';
 import Input from '../Input/Input';
 import './FormStrefa.scss';
 const FormStrefa = () => {
-    const [isOpen, setIsOpen] =useState(false)
+    const [isOpen, setIsOpen] = useState(false);
     const [Wpisz, setWpisz] = useState([]);
     const addNewWpisz = () => {
-       
         const array = Wpisz;
         const newItem = {
             id: Wpisz.length,
@@ -22,35 +21,13 @@ const FormStrefa = () => {
     return (
         <>
             <Form
-                initialValues={{ wpisz_one: '', wpisz_two: '', wpisz_three: ''}}
+                initialValues={{ wpisz_one: '', wpisz_two: '', wpisz_three: '' }}
                 onSubmit={values => {}}
                 validate={values => {
-                    if(!values.wpisz_one && !values.wpisz_one && !values.wpisz_one)
-                        setIsOpen(false)
-                    else {
-                        // const input = document.getElementsByClassName("wpisz")
-                        //     let count = 0;
-                        //     console.log(input)
-                        //     for(var i = 0;i<input.length;i++) {
-                        //        console.log(input[i])
-                        //         if(!input[i].value)
-                        //             count+=1
-                        //     }
-                        //     console.log(count)
-                        //     console.log(input.length)
-                        //     if(count<=input.length) {
-                        //         setIsOpen(false)
-                        //     }
-                        //     else {
-                        //         setIsOpen(true)
-                        //     }
-                        // document.get
-                        setIsOpen(true)
-                    }
-                       
-                    
+                    if (!values.wpisz_one && !values.wpisz_one && !values.wpisz_one) setIsOpen(false);
+                    else setIsOpen(true);
                 }}
-                render={({ handleSubmit, values, form }) => (
+                render={({ handleSubmit }) => (
                     <>
                         <p className="title_desription">
                             <strong>Wypelnij formularz zgloszeniowy</strong>
@@ -75,7 +52,7 @@ const FormStrefa = () => {
                                     </Row>
                                 )}
                             />
-                            <header style={{ marginTop: '5px', fontSize: "12px" }}>SIEDZIBA</header>
+                            <header style={{ marginTop: '5px', fontSize: '12px' }}>SIEDZIBA</header>
                             <Row className="collum-sm row-height">
                                 <Col md={4} sm={12} className="col-padding">
                                     <Field
@@ -102,7 +79,7 @@ const FormStrefa = () => {
                                             <Input
                                                 variant="shadow"
                                                 size="lg"
-                                                label="Ulica i numer lokalu"
+                                                label="Miejscowość"
                                                 floating
                                                 name="siedziba_two"
                                                 {...input}
@@ -118,7 +95,7 @@ const FormStrefa = () => {
                                             <Input
                                                 variant="shadow"
                                                 size="lg"
-                                                label="Ulica i numer lokalu"
+                                                label="Kod pocztowy"
                                                 floating
                                                 name="siedziba_three"
                                                 {...input}
@@ -129,7 +106,7 @@ const FormStrefa = () => {
                                 </Col>
                             </Row>
 
-                            <header style={{ marginTop: '5px', fontSize: "12px" }}>ADRES DZIALALNOSCI</header>
+                            <header style={{ marginTop: '5px', fontSize: '12px' }}>ADRES DZIALALNOSCI</header>
                             <Row>
                                 <Col md={4} sm={12} className="col-padding">
                                     <Field
@@ -259,7 +236,9 @@ const FormStrefa = () => {
                                         name="wpisz_one"
                                         render={({ input, meta }) => (
                                             <>
-                                                <header style={{ marginLeft: '3px', fontSize: "12px" }}>RODZAJ ASORTYMENTU/USLUGI</header>
+                                                <header style={{ marginLeft: '3px', fontSize: '12px' }}>
+                                                    RODZAJ ASORTYMENTU/USŁUGI
+                                                </header>
                                                 <Input
                                                     variant="shadow"
                                                     size="lg"
@@ -279,9 +258,9 @@ const FormStrefa = () => {
                                         name="wpisz_two"
                                         render={({ input, meta }) => (
                                             <>
-                                                <header style={{ marginLeft: '3px', fontSize: "12px" }}>
-                                                    RODZAJI WIELKOSC ULGI WYRAZONA W %; ZL LUB FORMIE RABATOW (NP,ILOSC
-                                                    DARMOWYCH WEJSC CZY USLUG)
+                                                <header style={{ marginLeft: '3px', fontSize: '12px' }}>
+                                                    RODZAJI WIELKOŚĆ ULGI WYRAZONA W %; ZŁ LUB FORMIE RABATÓW (NP,ILOŚĆ
+                                                    DARMOWYCH WEJSC CZY USŁUG)
                                                 </header>
                                                 <Input
                                                     variant="shadow"
@@ -302,7 +281,7 @@ const FormStrefa = () => {
                                         name="wpisz_three"
                                         render={({ input, meta }) => (
                                             <>
-                                                <header style={{ marginLeft: '3px', fontSize: "12px" }}>
+                                                <header style={{ marginLeft: '3px', fontSize: '12px' }}>
                                                     UWAGI, NP, TERMIN OBOWIAZYWANIA ULGI, WYLACZENIA ITP
                                                 </header>
                                                 <Input
@@ -319,34 +298,25 @@ const FormStrefa = () => {
                                         )}
                                     />
                                 </Col>
-                                    {/* <button
-                                            className="btn_add-circel align-self-end"
-                                            onClick={e => {
-                                                e.preventDefault();
-                                                addNewWpisz();
-                                            }}
-                                        >
-                                            <p className="plus_icon">+</p>
-                                    </button> */}
-                                { isOpen ? (
+                                {isOpen ? (
                                     <button
                                         className="btn_add-circel align-self-end"
                                         onClick={e => {
                                             e.preventDefault();
                                             addNewWpisz();
-                                            setIsOpen(!isOpen)
+                                            setIsOpen(!isOpen);
                                         }}
                                     >
                                         <p className="plus_icon">+</p>
                                     </button>
                                 ) : (
                                     <button
-                                    className="btn_add-circel align-self-end"
-                                    onClick={e => {
-                                        e.preventDefault();
-                                        addNewWpisz();
+                                        className="btn_add-circel align-self-end"
+                                        onClick={e => {
+                                            e.preventDefault();
+                                            addNewWpisz();
                                         }}
-                                    disabled
+                                        disabled
                                     >
                                         <p className="plus_icon">+</p>
                                     </button>
@@ -409,7 +379,6 @@ const FormStrefa = () => {
                                                                 size="lg"
                                                                 label="Wpisz"
                                                                 floating
-                                                               
                                                                 name={`${ele.name}.3`}
                                                                 {...input}
                                                                 error={!!meta.error && !!meta.touched && [meta.error]}
