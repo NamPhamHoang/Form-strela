@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Field, Form } from 'react-final-form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,6 +9,25 @@ const FormStrefa = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [Wpisz, setWpisz] = useState([]);
     const addNewWpisz = () => {
+        const newWpisz = document.getElementsByClassName("newWpisz")
+        let count = 0;
+        if(newWpisz[0].children[0] !== undefined) {
+            for(var i=0;i<newWpisz[0].children[newWpisz[0].children.length-1].children.length;i++) {
+                const value = newWpisz[0].children[newWpisz[0].children.length-1].children[i].children[0].children[1].defaultValue
+                if(value === "") {
+                    count+=1;
+                }
+            }
+            console.log(count)
+            if(count>=1) {
+                setIsOpen(false)
+                return
+            }
+            else {
+                setIsOpen(true)
+            }
+        }
+       
         const array = Wpisz;
         const newItem = {
             id: Wpisz.length,
@@ -16,6 +35,7 @@ const FormStrefa = () => {
         };
         array.push(newItem);
         setWpisz(array);
+
     };
 
     return (
@@ -24,8 +44,11 @@ const FormStrefa = () => {
                 initialValues={{ wpisz_one: '', wpisz_two: '', wpisz_three: '' }}
                 onSubmit={values => {}}
                 validate={values => {
-                    if (!values.wpisz_one && !values.wpisz_one && !values.wpisz_one) setIsOpen(false);
-                    else setIsOpen(true);
+                    if (!values.wpisz_one || !values.wpisz_two || !values.wpisz_three) setIsOpen(false);
+                    else 
+                    {
+                        setIsOpen(true);
+                    }
                 }}
                 render={({ handleSubmit }) => (
                     <>
