@@ -8,7 +8,22 @@ import './FormStrefa.scss';
 import { isEmail } from '../../helpers';
 const FormStrefa = () => {
     const [isOpen, setIsOpen] = useState(false);
-
+    const form = [
+            nazwa,
+            siedziba_one,
+            siedziba_two,
+            siedziba_three,
+            address_one,
+            address_two,
+            address_three,
+            regon,
+            number,
+            email,
+            wpisz_one,
+            wpisz_two,
+            wpisz_three,
+            adres_pla,
+    ],
     return (
         <>
             <Form
@@ -16,36 +31,7 @@ const FormStrefa = () => {
                 onSubmit={values => {}}
                 validate={values => {
                     const errors = {};
-                    if (!values.email) {
-                        errors.email = 'Wpisz adres email';
-                    } else if (!isEmail(values.email)) {
-                        errors.email = 'Wpisz poprawny adres email';
-                    } /* else if (submitErrors.email) {
-                                    [errors.email] = submitErrors.email;
-                                } */
-
-                    if (!values.password) {
-                        errors.password = 'Wpisz hasło';
-                    } else if (values.password.leading < 8) {
-                        errors.password = 'Minimalna długość hasła to 8 znaków';
-                    }
-
-                    if (!values.password_confirmation) {
-                        // eslint-disable-next-line camelcase
-                        errors.password_confirmation = 'Powtórz hasło';
-                    }
-
-                    if (
-                        values.password &&
-                        values.password_confirmation &&
-                        values.password !== values.password_confirmation
-                    ) {
-                        errors.password = 'Wpisane hasła są różne';
-                    }
-
-                    if (!values.nazwa) {
-                        errors.nazwa = 'Wymagane';
-                    }
+                    
                     return errors;
                 }}
                 render={({ handleSubmit, values, form }) => (
