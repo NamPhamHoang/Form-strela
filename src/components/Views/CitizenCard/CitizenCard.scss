@@ -74,6 +74,7 @@
   }
 
   .description {
+    padding-right: 50px;
     .more-info {
       font-size: $font-size-base;
       margin-top: bsize(5);
@@ -95,6 +96,8 @@
       .tabLinks {
         @extend .more-info;
         @extend .more-info-citizen-zone;
+        min-width: 225.7px;
+        font-size: 1rem;
         strong {
           font-weight: 500;
         }
@@ -196,6 +199,7 @@
     }
 
     .description {
+      padding-right:15px;
       .more-info {
         display: block;
         margin-left: auto;
@@ -203,6 +207,7 @@
       }
       .tabLinks{
         margin-right: 0px !important;
+        min-width: 0px !important;
         width: 100%;
       }
     }

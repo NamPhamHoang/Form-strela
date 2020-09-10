@@ -1,38 +1,54 @@
-import React, { useState, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Field, Form } from 'react-final-form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Input from '../Input/Input';
 import './FormStrefa.scss';
-import { isEmail } from '../../helpers';
 const FormStrefa = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    // const form = [
-    //         nazwa,
-    //         siedziba_one,
-    //         siedziba_two,
-    //         siedziba_three,
-    //         address_one,
-    //         address_two,
-    //         address_three,
-    //         regon,
-    //         number,
-    //         email,
-    //         wpisz_one,
-    //         wpisz_two,
-    //         wpisz_three,
-    //         adres_pla,
-    // ],
+    const [isOpen, setIsOpen] =useState(false)
+    const [Wpisz, setWpisz] = useState([]);
+    const addNewWpisz = () => {
+       
+        const array = Wpisz;
+        const newItem = {
+            id: Wpisz.length,
+            name: 'wpisz' + Wpisz.length,
+        };
+        array.push(newItem);
+        setWpisz(array);
+    };
+
     return (
         <>
             <Form
-                initialValues={{ role_id: 1 }}
+                initialValues={{ wpisz_one: '', wpisz_two: '', wpisz_three: ''}}
                 onSubmit={values => {}}
                 validate={values => {
-                    const errors = {};
+                    if(!values.wpisz_one && !values.wpisz_one && !values.wpisz_one)
+                        setIsOpen(false)
+                    else {
+                        // const input = document.getElementsByClassName("wpisz")
+                        //     let count = 0;
+                        //     console.log(input)
+                        //     for(var i = 0;i<input.length;i++) {
+                        //        console.log(input[i])
+                        //         if(!input[i].value)
+                        //             count+=1
+                        //     }
+                        //     console.log(count)
+                        //     console.log(input.length)
+                        //     if(count<=input.length) {
+                        //         setIsOpen(false)
+                        //     }
+                        //     else {
+                        //         setIsOpen(true)
+                        //     }
+                        // document.get
+                        setIsOpen(true)
+                    }
+                       
                     
-                    return errors;
                 }}
                 render={({ handleSubmit, values, form }) => (
                     <>
@@ -59,7 +75,7 @@ const FormStrefa = () => {
                                     </Row>
                                 )}
                             />
-                            <header style={{ marginTop: '5px' }}>SIEDZIBA</header>
+                            <header style={{ marginTop: '5px', fontSize: "12px" }}>SIEDZIBA</header>
                             <Row className="collum-sm row-height">
                                 <Col md={4} sm={12} className="col-padding">
                                     <Field
@@ -113,7 +129,7 @@ const FormStrefa = () => {
                                 </Col>
                             </Row>
 
-                            <header style={{ marginTop: '5px' }}>ADRES DZIALALNOSCI</header>
+                            <header style={{ marginTop: '5px', fontSize: "12px" }}>ADRES DZIALALNOSCI</header>
                             <Row>
                                 <Col md={4} sm={12} className="col-padding">
                                     <Field
@@ -240,16 +256,17 @@ const FormStrefa = () => {
                             <Row>
                                 <Col md={4} sm={12} className="col-padding align-self-end">
                                     <Field
-                                        name="address_one"
+                                        name="wpisz_one"
                                         render={({ input, meta }) => (
                                             <>
-                                                <header style={{ marginLeft: '3px' }}>RODZAJ ASORTYMENTU/USLUGI</header>
+                                                <header style={{ marginLeft: '3px', fontSize: "12px" }}>RODZAJ ASORTYMENTU/USLUGI</header>
                                                 <Input
                                                     variant="shadow"
                                                     size="lg"
                                                     label="Wpisz"
                                                     floating
                                                     name="wpisz_one"
+                                                    className="wpisz"
                                                     {...input}
                                                     error={!!meta.error && !!meta.touched && [meta.error]}
                                                 />
@@ -259,10 +276,10 @@ const FormStrefa = () => {
                                 </Col>
                                 <Col md={4} sm={12} className="col-padding">
                                     <Field
-                                        name="address_two"
+                                        name="wpisz_two"
                                         render={({ input, meta }) => (
                                             <>
-                                                <header style={{ marginLeft: '3px' }}>
+                                                <header style={{ marginLeft: '3px', fontSize: "12px" }}>
                                                     RODZAJI WIELKOSC ULGI WYRAZONA W %; ZL LUB FORMIE RABATOW (NP,ILOSC
                                                     DARMOWYCH WEJSC CZY USLUG)
                                                 </header>
@@ -272,6 +289,7 @@ const FormStrefa = () => {
                                                     label="Wpisz"
                                                     floating
                                                     name="wpisz_two"
+                                                    className="wpisz"
                                                     {...input}
                                                     error={!!meta.error && !!meta.touched && [meta.error]}
                                                 />
@@ -281,10 +299,10 @@ const FormStrefa = () => {
                                 </Col>
                                 <Col md={4} sm={12} className="col-padding align-self-end">
                                     <Field
-                                        name="address_three"
+                                        name="wpisz_three"
                                         render={({ input, meta }) => (
                                             <>
-                                                <header style={{ marginLeft: '3px' }}>
+                                                <header style={{ marginLeft: '3px', fontSize: "12px" }}>
                                                     UWAGI, NP, TERMIN OBOWIAZYWANIA ULGI, WYLACZENIA ITP
                                                 </header>
                                                 <Input
@@ -294,46 +312,134 @@ const FormStrefa = () => {
                                                     floating
                                                     name="wpisz_three"
                                                     {...input}
+                                                    className="wpisz"
                                                     error={!!meta.error && !!meta.touched && [meta.error]}
                                                 />
                                             </>
                                         )}
                                     />
                                 </Col>
-                                <button
+                                    {/* <button
+                                            className="btn_add-circel align-self-end"
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                addNewWpisz();
+                                            }}
+                                        >
+                                            <p className="plus_icon">+</p>
+                                    </button> */}
+                                { isOpen ? (
+                                    <button
+                                        className="btn_add-circel align-self-end"
+                                        onClick={e => {
+                                            e.preventDefault();
+                                            addNewWpisz();
+                                            setIsOpen(!isOpen)
+                                        }}
+                                    >
+                                        <p className="plus_icon">+</p>
+                                    </button>
+                                ) : (
+                                    <button
                                     className="btn_add-circel align-self-end"
                                     onClick={e => {
                                         e.preventDefault();
-                                        setIsOpen(!isOpen);
-                                    }}
-                                >
-                                    {/* 
-                                    <i class="far fa-plus"></i> */}
-                                </button>
+                                        addNewWpisz();
+                                        }}
+                                    disabled
+                                    >
+                                        <p className="plus_icon">+</p>
+                                    </button>
+                                )}
                             </Row>
-                            <div>
-                                    {isOpen ? (
+                            <div className="newWpisz">
+                                {Wpisz.map(ele => {
+                                    return (
                                         <Row>
-                                            <Col md={4} sm={12} className="col-padding">
-                                                <Input
-                                                    variant="shadow"
-                                                    size="lg"
-                                                    label="Ulica i numer lokalu"
-                                                    floating
+                                            <Col md={4} sm={12} className="col-padding align-self-end">
+                                                <Field
+                                                    name={`${ele.name}.1`}
+                                                    render={({ input, meta }) => (
+                                                        <>
+                                                            <Input
+                                                                variant="shadow"
+                                                                size="lg"
+                                                                label="Wpisz"
+                                                                floating
+                                                                name={`${ele.name}.1`}
+                                                                className="wpisz"
+                                                                {...input}
+                                                                error={!!meta.error && !!meta.touched && [meta.error]}
+                                                            />
+                                                        </>
+                                                    )}
                                                 />
                                             </Col>
-
                                             <Col md={4} sm={12} className="col-padding">
-                                                <Input variant="shadow" size="lg" label="Miejscowość" floating />
+                                                <Field
+                                                    name={`${ele.name}.2`}
+                                                    render={({ input, meta }) => (
+                                                        <>
+                                                            <Input
+                                                                variant="shadow"
+                                                                size="lg"
+                                                                label="Wpisz"
+                                                                floating
+                                                                name={`${ele.name}.2`}
+                                                                className="wpisz"
+                                                                {...input}
+                                                                error={
+                                                                    !!meta.error &&
+                                                                    !!meta.touched && [meta.error] &&
+                                                                    !!meta.data
+                                                                }
+                                                            />
+                                                        </>
+                                                    )}
+                                                />
                                             </Col>
-                                            <Col md={4} sm={12} className="col-padding">
-                                                <Input variant="shadow" size="lg" label="Kod pocztowy" floating />
+                                            <Col md={4} sm={12} className="col-padding align-self-end">
+                                                <Field
+                                                    name={`${ele.name}.3`}
+                                                    className="wpisz"
+                                                    render={({ input, meta }) => (
+                                                        <>
+                                                            <Input
+                                                                variant="shadow"
+                                                                size="lg"
+                                                                label="Wpisz"
+                                                                floating
+                                                               
+                                                                name={`${ele.name}.3`}
+                                                                {...input}
+                                                                error={!!meta.error && !!meta.touched && [meta.error]}
+                                                            />
+                                                        </>
+                                                    )}
+                                                />
                                             </Col>
                                         </Row>
-                                    ) : (
-                                        ''
-                                    )}
-                                </div>
+                                    );
+                                })}
+                            </div>
+                            <Field
+                                name="adres"
+                                render={({ input, meta }) => (
+                                    <Row className="row-height">
+                                        <Col className="col-padding">
+                                            <Input
+                                                variant="shadow"
+                                                size="lg"
+                                                label="Adres placówki/plaówek, w których będą realizowane ulgi, znizki, rabaty"
+                                                floating
+                                                name="adres"
+                                                {...input}
+                                                error={!!meta.error && !!meta.touched && [meta.error]}
+                                            />
+                                        </Col>
+                                    </Row>
+                                )}
+                            />
                             <Button type="submit" className="btn-submit-form">
                                 Wyślij formularz
                             </Button>
