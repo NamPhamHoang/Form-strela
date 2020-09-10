@@ -8,22 +8,22 @@ import './FormStrefa.scss';
 import { isEmail } from '../../helpers';
 const FormStrefa = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const form = [
-            nazwa,
-            siedziba_one,
-            siedziba_two,
-            siedziba_three,
-            address_one,
-            address_two,
-            address_three,
-            regon,
-            number,
-            email,
-            wpisz_one,
-            wpisz_two,
-            wpisz_three,
-            adres_pla,
-    ],
+    // const form = [
+    //         nazwa,
+    //         siedziba_one,
+    //         siedziba_two,
+    //         siedziba_three,
+    //         address_one,
+    //         address_two,
+    //         address_three,
+    //         regon,
+    //         number,
+    //         email,
+    //         wpisz_one,
+    //         wpisz_two,
+    //         wpisz_three,
+    //         adres_pla,
+    // ],
     return (
         <>
             <Form
@@ -300,7 +300,18 @@ const FormStrefa = () => {
                                         )}
                                     />
                                 </Col>
-                                <div>
+                                <button
+                                    className="btn_add-circel align-self-end"
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        setIsOpen(!isOpen);
+                                    }}
+                                >
+                                    {/* 
+                                    <i class="far fa-plus"></i> */}
+                                </button>
+                            </Row>
+                            <div>
                                     {isOpen ? (
                                         <Row>
                                             <Col md={4} sm={12} className="col-padding">
@@ -323,8 +334,6 @@ const FormStrefa = () => {
                                         ''
                                     )}
                                 </div>
-                            </Row>
-
                             <Button type="submit" className="btn-submit-form">
                                 Wyślij formularz
                             </Button>
