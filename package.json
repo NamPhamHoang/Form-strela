@@ -2,6 +2,7 @@
   "name": "jarocin",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://devergroupgithub.github.io/Jarocin/",
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.9.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
@@ -20,6 +21,7 @@
     "final-form": "^4.18.6",
     "final-form-arrays": "^3.0.2",
     "final-form-calculate": "^1.3.1",
+    "gh-pages": "^3.1.0",
     "leaflet": "^1.5.1",
     "leaflet-routing-machine": "^3.2.12",
     "lodash": "^4.17.15",
@@ -57,7 +59,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
