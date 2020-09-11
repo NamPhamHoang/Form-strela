@@ -373,7 +373,7 @@ const FormStrefa = () => {
                                 name="adres"
                                 render={({ input, meta }) => (
                                     <Row className="row-height">
-                                        <Col className="col-padding m-0">
+                                        <Col className="col-padding">
                                             <Input
                                                 variant="shadow"
                                                 size="lg"
