@@ -8,6 +8,7 @@ import Path from '../../components/Path/Path';
 import LayoutCard from '../../components/Cards/LayoutCards/LayoutCard';
 import Title from '../../components/Titles/Title/Title';
 import img from '../../img/strefamieszkanca.png';
+import images from '../../img/environment.png';
 import GrayStrap from '../../components/GrayStrap/GrayStrap';
 import BlueIcon from '../../components/BlueIcon/BlueIcon';
 import BackgroundSquare from '../../components/BackgroundSquare/BackgroundSquare';
@@ -17,6 +18,7 @@ import FormStrefa from '../../components/FormStrefa/FormStrefa';
 const CitizenZone = () => {
     const [modal, setModal] = useState(false);
     const [formTab, setFormTab] = useState(false);
+    const [activeForm, setActiveForm] =useState(false)
     return (
         <>
             <Helmet>
@@ -39,13 +41,14 @@ const CitizenZone = () => {
                 <Title className="citizen-card_title">Strefa mieszkańca</Title>
                 <BlueIcon icon={faIdCard} />
                 <Row>
-                    <Col lg={formTab ? 8 : 7} xl={formTab ? 9 : 6} className="description">
+                    <Col lg= {activeForm ? 8 : 7} xl={activeForm ? 9 : 6}  className="description">
                         <div className="tab">
                             <Button
                                 className={!formTab ? "tabLinks mr-3" : "tabLinks active mr-3"}
                                 onClick={e => {
                                     e.preventDefault();
                                     setFormTab(false)
+                                    setActiveForm(false);
                                 }}
                             >
                                 <strong>Mieszkaniec</strong>
@@ -55,6 +58,7 @@ const CitizenZone = () => {
                                 onClick={e => {
                                     e.preventDefault();
                                     setFormTab(true);
+                                    setActiveForm(false);
                                 }}
                             >
                                 <strong> Przedsiębiorca</strong>
@@ -74,18 +78,32 @@ const CitizenZone = () => {
                                 <p className="fw-300 fw-strong-500 text-justify">
                                     <strong>To bardzo proste!</strong>
                                 </p>
-                                <Button
-                                    onClick={e => {
-                                        e.preventDefault();
-                                        setModal(true);
-                                    }}
-                                    className="more-info more-info-citizen-zone"
-                                >
-                                    <strong>Zostan</strong> partnerem
-                                </Button>
                             </div>
                         ) : (
-                            <FormStrefa />
+                            !activeForm 
+                            ?
+                                <div>
+                                    <p className="fw-300 fw-strong-500 text-justify">
+                                        <strong>Jesteś mieszkańcem Gminy Jarocin!</strong>
+                                        <br />
+                                        Załóż kartę mieszkańca i korzystaj z bonusów, rabatów oraz zniżek na usługi
+                                        oferowane na terenie Gminy. <br />
+                                    </p>
+                                    <p className="fw-300 fw-strong-500 text-justify">
+                                        <strong>To bardzo proste!</strong>
+                                    </p>
+                                    <Button
+                                        onClick={e => {
+                                            e.preventDefault();
+                                            setActiveForm(true);
+                                        }}
+                                        className="more-info more-info-citizen-zone"
+                                    >
+                                        <strong>Zostan</strong> partnerem
+                                    </Button>
+                                </div>
+                            :
+                                <FormStrefa/>     
                         )}
                     </Col>
                     {!formTab ? (
@@ -95,7 +113,14 @@ const CitizenZone = () => {
                             </div>
                         </Col>
                     ) : (
-                        <></>
+                        !activeForm 
+                        ? (
+                            <Col lg={4} xl={5} className="card-image">
+                                <div className="photo-container" style={{ backgroundImage: `url(${images})` }}>
+                                    <img src={images} alt="Obraz ilustrujący kartę mieszkańca" />
+                                </div>
+                            </Col>
+                        ) : (<></>)
                     )}
                 </Row>
                 <GrayStrap

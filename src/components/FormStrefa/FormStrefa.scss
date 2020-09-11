@@ -6,6 +6,9 @@
     padding-right: 50px;
     header {
         line-height: 1;
+        margin-top: 5px;
+        font-size: 12px;
+        margin-bottom: 4px;
     }
     .col-padding {
         padding-right: 4px;
@@ -41,7 +44,7 @@
     }
     .btn-submit-form {
         font-size: 1rem;
-        margin-top: 15px;
+        margin-top: 20px;
         color: #fff;
         min-width: 225.69px;
         box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
@@ -69,6 +72,10 @@
             padding-left: 15px;
            
         }
+        .btn_add-circel {
+            position: relative;
+            right: 0;
+        }
         .col-padding {
             padding-left:3px
         }
@@ -84,6 +91,10 @@
             padding-right: 15px;
             padding-left: 15px;
          }
+        .btn_add-circel {
+            position: relative;
+            right: 0;
+        }
         .col-padding {
             padding-left:3px
         }
