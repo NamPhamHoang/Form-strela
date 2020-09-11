@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Form-strela/precache-manifest.0c72148209b00d82f5858dc591441cc3.js"
+  "/Form-strela/precache-manifest.fd67587cf8aaeee2ff96fb22a2f2e2c2.js"
 );
 
 self.addEventListener('message', (event) => {
